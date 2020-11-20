@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+#name : lispinline
+#key : lispin
+#group: coding 
+#contributor : Georg Pollak
+# --
+\lispinline{$1}$0

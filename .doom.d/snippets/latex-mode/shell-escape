@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+#name : shell-escape
+#key : shelle
+#contributor : 
+# --
+%%% TeX-command-extra-options: "-shell-escape"

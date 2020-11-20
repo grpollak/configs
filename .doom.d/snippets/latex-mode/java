@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+#name : java
+#key : java
+#contributor : Georg Pollak
+#group coding
+# --
+\begin{mintlinebox}{java}
+  $0
+\end{mintlinebox}

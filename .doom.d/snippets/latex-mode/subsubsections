@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+#name : subsubsections
+#key : sssecs
+#contributor : Georg Pollak
+# --
+\subsubsection*{${1:name}}
+$0

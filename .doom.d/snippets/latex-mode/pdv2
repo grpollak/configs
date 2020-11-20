@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+#name : pdv2
+#key : pdv2
+#gourp: differential calculus 
+#contributor : Georg Pollak
+# --
+\pdv[${1:2}]{${2:numerator}}{${3:denominator}}$0

@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+#name : widetilde
+#key : wtil
+#group: math
+#contributor : Georg Pollak
+# --
+\widetilde{$1}$0

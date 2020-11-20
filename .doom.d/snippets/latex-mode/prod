@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+#name : prod
+#key : prod
+#contributor : Georg Pollak
+# --
+\prod_{${1:\\idxi=1}}^{${2:N}}$0

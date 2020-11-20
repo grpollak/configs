@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+#name : prob2
+#key : prob2
+#group: math
+#contributor : Georg Pollak
+# --
+\prob${1:_{${2:x},${3:y}}}\big($4\big)$0

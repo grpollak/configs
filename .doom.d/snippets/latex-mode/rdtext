@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+#name : rdtext
+#key : trd
+#group: text
+#contributor : Georg Pollak
+# --
+\text{\rd{$1}}$0

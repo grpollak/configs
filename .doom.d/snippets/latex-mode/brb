@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+#name : brb
+#key : brb
+#contributor : Georg Pollak
+#group: math
+# --
+\big($0\big)

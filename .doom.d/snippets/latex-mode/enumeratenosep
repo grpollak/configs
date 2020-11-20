@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+#name : enumeratenosep
+#key : enumn
+#groupe: lists
+#contributor : Georg Pollak
+# --
+\begin{enumeratenosep}
+\item $0
+\end{enumeratenosep}

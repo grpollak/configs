@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+#name : bitem
+#key : bitem
+#contributor : 
+# --
+\item<$1>$2
+\note[item]<$1>{$3}
+$0

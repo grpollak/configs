@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: proof
+# key: proof
+# group: theorem
+# --
+\begin{proofbox}\nospacing
+    \begin{proof}${1:[${2:title}]}${3:\label{proof:${2:$(downcase(replace-regexp-in-string "[[:space:]]" "_" yas-text))}}}
+        $0
+    \end{proof}
+\end{proofbox}

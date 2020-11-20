@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+#name : textcolor
+#key : tcc
+#contributor : Georg Pollak
+# --
+\textcolor{${1:black}}{$2}$0

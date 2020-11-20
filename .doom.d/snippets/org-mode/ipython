@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+#name : ipython
+#key : ipy
+#contributor : Georg Pollak
+# --
+#+BEGIN_SRC ipython :session ${2:mysession} :results ${3:raw drawer}
+    $0
+#+END_SRC

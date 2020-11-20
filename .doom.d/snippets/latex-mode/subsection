@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+#name : subsection
+#key : subsection
+#key : ssec
+#contributor : Georg Pollak
+# --
+\subsection{${1:name}}${2:\label{subsec:${1:$(downcase(replace-regexp-in-string "[[:space:]]" "_" yas-text))}}}
+$0

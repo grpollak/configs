@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+#name : mintlinebox
+#key : mlbox
+#group: coding
+#contributor : Georg Pollak
+# --
+\begin{mintlinebox}${1:<${2:minted options}>}${3:[${4:options}]}${5:{${6:language}}}
+	$0	
+\end{mintlinebox}

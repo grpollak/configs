@@ -1,0 +1,12 @@
+# -*- mode: snippet -*-
+#name : doc-file
+#key : doc-file
+#contributor : 
+# --
+/**
+ * @fileOverview ${1:file description}
+ * @name `(file-name-nondirectory (buffer-file-name))`
+ * @author ${2:D-Light GmbH}
+ * @license 
+ */
+$0

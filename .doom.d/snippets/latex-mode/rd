@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: rd
+# key: rd
+# group: text
+# --
+\rd{$1}$0

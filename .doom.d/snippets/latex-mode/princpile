@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+#name : principile
+#key : princ
+# group: theorem
+# --
+\begin{principbox}\nospacing
+    \begin{princip}${1:[${2:title}]}${3:\label{princip:${2:$(downcase(replace-regexp-in-string "[[:space:]]" "_" yas-text))}}}
+        $0
+    \end{princip}
+\end{principbox}

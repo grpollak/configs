@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+#name : codeboxInput
+#key : cboxi
+#contributor : Georg Pollak
+#group: coding
+# --
+\codeboxinput${1:[${2:Title}]}${3:[${4:Options}]}{${5:language}}{figures/${6:filename}}$0

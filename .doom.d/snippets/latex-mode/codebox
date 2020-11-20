@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+#name : codebox
+#key : cbox
+#group: coding
+#contributor : Georg Pollak
+# --
+\begin{codebox}${1:{${2:Title}}}\nospacing
+    \begin{plaincodebox}${3:<${4:minted options}>}${5:[${6:options}]}${7:{${8:language}}}
+        $0
+    \end{plaincodebox}
+\end{codebox}

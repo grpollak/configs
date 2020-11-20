@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+#name : explaination
+#key : explaination
+#group: theorem
+# --
+\begin{explanationbox}\nospacing
+    \begin{explanation}${1:[${2:title}]}${3:\label{explanation:${2:$(downcase(replace-regexp-in-string "[[:space:]]" "_" yas-text))}}}
+        $0
+    \end{explanation}
+\end{explanationbox}

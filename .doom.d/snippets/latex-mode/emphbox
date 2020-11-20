@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+#name : emphbox
+#key : emphb
+#contributor : Georg Pollak
+# --
+\begin{emphbox}\nospacing
+   $0
+\end{emphbox}

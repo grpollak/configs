@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+#name : codeboxNl
+#key : cboxn
+#contributor : Georg Pollak
+#group: coding
+# --
+\begin{codeboxNl}${1:[${2:Title}]}{${3:language}}
+	$0	
+\end{codeboxNl}

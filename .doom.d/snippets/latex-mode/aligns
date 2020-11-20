@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+#name : aligns
+#key : aligns
+#goup: math
+#contributor : Georg Pollak
+# --
+\begin{align*}
+  $1
+\end{align*}$0

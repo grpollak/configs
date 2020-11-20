@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+#name : corollary
+#key : cor
+#group : theorem
+#contributor : Georg Pollak
+# --
+\begin{corbox}\nospacing
+  \begin{cor}${1:[${2:title}]}${3:\label{cor:${2:$(downcase(replace-regexp-in-string "[[:space:]]" "_" yas-text))}}}
+	$4 
+  \end{cor}
+\end{corbox}$0

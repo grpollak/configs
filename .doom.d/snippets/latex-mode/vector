@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: vector 
+# key: vec
+# group: math
+# --
+\\vec{$1}$0

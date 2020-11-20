@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+#name : frac
+#key : frac
+# group: math
+#contributor : Georg Pollak
+# --
+\frac{$1}{$2}$0

@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+#name : \[
+#key : \[
+#group: math
+#contributor : Georg Pollak
+# --
+\[$1\]$0

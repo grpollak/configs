@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+#name : tnode
+#key : tnode
+#contributor : Georg Pollak
+# group: tikz
+# --
+\node[draw, ${1:shape}, fill=${2:color}, ${3:right/left/below/above}${4:=${5:5pt} of ${6:node}] ${7:(label)} {${0:text}};

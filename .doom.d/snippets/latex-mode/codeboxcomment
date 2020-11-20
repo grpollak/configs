@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+#name : codeboxcomment
+#key : cboxc
+#group: coding
+#contributor : Georg Pollak
+# --
+\begin{codeboxcomment}${1:[${2:Title}]}${3:{${4:width}}}{${5:language}}{${6:
+		comment}
+}
+	$0
+\end{codeboxcomment}

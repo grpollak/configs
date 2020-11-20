@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+#name : numberlistnosep
+#key : nblistnosep
+#groupe: lists
+#contributor : Georg Pollak
+# --
+\begin{numberlistnosep}
+\item $1
+\end{numberlistnosep}$0

@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: imps
+# key: imps
+# group: text
+# --
+\imps{$1}$0

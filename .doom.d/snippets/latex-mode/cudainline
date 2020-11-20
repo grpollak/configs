@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+#name : cudainline
+#key : cudain
+#group: coding 
+#contributor : Georg Pollak
+# --
+\cudainline{$1}$0

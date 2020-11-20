@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: rdb
+# key: rdb
+# group: text
+# --
+\rdb{$1}$0

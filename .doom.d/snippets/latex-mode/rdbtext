@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+#name : rdbtext
+#key : trdb
+#group: text
+#contributor : Georg Pollak
+# --
+\text{\rdb{$1}}$0

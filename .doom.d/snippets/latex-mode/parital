@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+#name: Parital derivative
+#key: partiald
+#group: math
+#contributor : Georg Pollak
+# --
+\frac{\partial$1}{\partial$2}$0

@@ -1,0 +1,12 @@
+# -*- mode: snippet -*-
+#name : codeboxfigure
+#key : cboxf
+#contributor : 
+# --
+\begin{figure}[H]
+\centering
+\begin{minted}[frame=lines, breaklines=true, linenos=true, fontsize=\scriptsize, escapeinside=||]{${1:language}}
+$0
+\end{minted}
+${2:\caption{$3}}
+\end{figure}

@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: mc
+# key: mc
+# group: math
+# --
+\mc[${1:1}]{$2}$0

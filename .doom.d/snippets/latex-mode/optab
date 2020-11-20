@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+#name : optab
+#key : optab
+#group: coding
+#contributor : Georg Pollak
+# --
+|\optal\optc{\texttt{$1}}\optar|$0

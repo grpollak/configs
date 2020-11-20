@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+#name : optct
+#key : optct
+#contributor : Georg Pollak
+# --
+\optc{\texttt{$1}}$0

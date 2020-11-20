@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+#name : conditionalprobability
+#key : probc
+#contributor : Georg Pollak
+# math
+# --
+\probc{${1:x}}{${2:y}}$0

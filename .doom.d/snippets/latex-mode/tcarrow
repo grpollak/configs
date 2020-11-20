@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+#name : tcarrow
+#key : tcarrow
+#contributor : Georg Pollak
+#groupe: tikz
+# --
+\drawloop[${1:options e.g. ->, stretch=1.1}]{${2:node}}{${3:start angle}}{${4:end angle}} ${5:node[${6:pos=0.5,left right ...}] {${7:label text}}};

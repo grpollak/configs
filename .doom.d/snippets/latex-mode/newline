@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+#name : newsmall line for equations
+#key : nl
+#group : math
+#contributor : Georg Pollak
+# --
+\\\[-1\jot]$0

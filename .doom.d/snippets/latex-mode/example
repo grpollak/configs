@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+#name : example
+#key : example
+#contributor : Georg Pollak
+# group: theorem
+# --
+\begin{examplebox}\nospacing
+    \begin{example}${1:[${2:title}]}${3:\label{example:${2:$(downcase(replace-regexp-in-string "[[:space:]]" "_" yas-text))}}}
+        $0
+    \end{example}
+\end{examplebox}

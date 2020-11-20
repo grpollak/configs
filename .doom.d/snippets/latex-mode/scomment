@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+#name : scomment
+#key : scomment
+#contributor : Georg Pollak
+# --
+% ${1:Comment}
+% ------------------------------------------------------------------------------ $0

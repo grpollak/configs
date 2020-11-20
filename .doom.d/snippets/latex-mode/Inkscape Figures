@@ -1,0 +1,27 @@
+# -*- mode: snippet -*-
+# name: Inkscape Figures
+# key: inkfigs
+# gourp: figure
+# --
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}{${1:.45}\columnwidth}
+		\centering{
+			\def\svgwidth{${8:100pt}}
+			\resizebox{${3:\linewidth}}{!}{\input{${2:figures/}$3${4:.pdf_tex}}}
+		}
+		\vspace{-1.5em}
+		\caption{$9}
+		${10:\label{fig:$11}}
+	\end{subfigure}%
+	\hfil
+	\begin{subfigure}{${1:.45}\columnwidth}
+		\centering{
+			\def\svgwidth{${2:100pt}}
+			\resizebox{${8:\linewidth}}{!}{\input{${5:figures/}$6${7:.pdf_tex}}}
+		}
+		\vspace{-1.5em}
+		\caption{$12}
+		${13:\label{fig:$14}}
+	\end{subfigure}
+\end{figure}$0

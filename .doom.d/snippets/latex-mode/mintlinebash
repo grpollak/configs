@@ -1,0 +1,12 @@
+# -*- mode: snippet -*-
+#name : mintlineboxbash
+#key : mlboxb
+#contributor : 
+# --
+\begingroup
+\catcode`\!=\active
+\def!#1!{\optc{\texttt{#1}}}
+    \begin{mintlinebox}${1:<${2:minted options}>}${3:[${4:options}]}${5:{${6:language}}}
+            $0	
+    \end{mintlinebox}
+\endgroup

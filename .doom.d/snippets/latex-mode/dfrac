@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+#name : dfrac
+#key : dfrac
+#contributor : Georg Pollak
+# --
+\dfrac{${1:numerator}}{${2:denominator}}$0

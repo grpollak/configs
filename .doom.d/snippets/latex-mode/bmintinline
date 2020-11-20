@@ -1,0 +1,12 @@
+# -*- mode: snippet -*-
+#name : bmintinline
+#key : bmlbox
+#contributor : 
+# --
+\begingroup
+\catcode`\!=\active
+\def!#1!{\optc{#1}}
+\begin{mintlinebox}{bash}
+   ${0:|!something colored!|}
+\end{mintlinebox} 
+\endgroup

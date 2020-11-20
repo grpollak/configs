@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+#name : submodule
+#key : submod
+#contributor : 
+# --
+\input{$1_submodule/src/$2}$0

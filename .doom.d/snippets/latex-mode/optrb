@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+#name : optrb
+#key : optrb
+#group: coding
+#contributor : Georg Pollak
+# --
+|\optrl|$1|\optrr|$0

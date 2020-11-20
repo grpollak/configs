@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+#name : mintinline
+#key : min
+#group: coding 
+#contributor : Georg Pollak
+# --
+\\mintinline{${1:language}}{$2}$0

@@ -1,0 +1,11 @@
+# key: inkfig
+# name: Inkscape Figure
+# group: figure
+# --
+
+\begin{figure}[H]	
+\centering{
+	\def\svgwidth{${1:100pt}}
+	\resizebox{${2:0.6\linewidth}}{!}{\input{${3:figures/}$4${5:.pdf_tex}}}
+}
+\end{figure}$0

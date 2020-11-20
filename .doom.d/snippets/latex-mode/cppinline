@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+#name : cppinline
+#key : cppin
+#group: coding 
+#contributor : Georg Pollak
+# --
+\cppinline{$1}$0
