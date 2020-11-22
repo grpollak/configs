@@ -102,3 +102,12 @@ To send mails we need to configure ~smtp~
 
 #+RESULTS:
 : t
+* Python
+** Documentation
+*** Sphinx
+#+BEGIN_SRC emacs-lisp
+(use-package sphinx-doc
+:bind (:map sphinx-doc-mode-map
+            ("SPC C-d" . sphinx-doc))
+)
+#+END_SRC

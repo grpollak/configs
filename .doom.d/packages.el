@@ -53,9 +53,5 @@
 (package! try)
 (package! ayu-theme)
 (package! color-theme-sanityinc-tomorrow)
-;; (package! org-bullets)
-;; (use-package org-bullets
-;;   :after org
-;;   :commands org-bullets-mode
-;;   :hook (org-mode . org-bullets-mode)
-;; )
+;; Python
+(package! sphinx-doc)
