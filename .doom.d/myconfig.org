@@ -78,12 +78,14 @@ change `org-directory'. It must be set before org loads!
 | ~/org | ~/.doom.d/ |
 
 * LaTeX
+** Basic Configurations
 #+begin_src emacs-lisp
 (setq +latex-viewers '(evince))
 #+end_src
-
-#+RESULTS:
-| pdf-tools |
+** px - preview LaTeX in any mode
+#+BEGIN_SRC emacs-lisp
+(use-package px)
+#+END_SRC
 * Mail
 Each path is relative to `+mu4e-mu4e-mail-path', which is ~/.mail by default
 To send mails we need to configure ~smtp~

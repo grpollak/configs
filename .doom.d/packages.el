@@ -55,3 +55,5 @@
 (package! color-theme-sanityinc-tomorrow)
 ;; Python
 (package! sphinx-doc)
+;; LaTeX
+(package! px)
