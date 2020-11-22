@@ -1,4 +1,11 @@
 #+TITLE: My Emacs Config
+* Evil
+#+begin_src emacs-lisp
+(after! evil-snipe (evil-snipe-mode -1))
+#+end_src
+
+#+RESULTS:
+
 * Themes
  There are two ways to load a theme. Both assume the theme is installed and
  available. You can either set ~doom-theme~ or manually load a theme with the
@@ -80,7 +87,7 @@ change `org-directory'. It must be set before org loads!
 * Mail
 Each path is relative to `+mu4e-mu4e-mail-path', which is ~/.mail by default
 To send mails we need to configure ~smtp~
-#+BEGIN_SRC emacs-lisp :tangle no
+#+BEGIN_SRC emacs-lisp
 ;; (set-email-account! "Gmail"
 ;;   '((mu4e-sent-folder       . "/gmail/[Gmail]/Gesendet")
 ;;     (mu4e-drafts-folder     . "/gmail/[Gmail]/Entw&APw-rfe")
