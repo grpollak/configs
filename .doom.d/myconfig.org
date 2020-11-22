@@ -6,6 +6,20 @@
 
 #+RESULTS:
 
+* Completion
+** Helm
+*** Describes keybindings of current mode
+#+BEGIN_SRC emacs-lisp
+(use-package! helm-descbinds
+  :hook (helm-mode . helm-descbinds-mode)
+  :bind (
+         ("C-h b" . helm-descbinds)
+        )
+)
+#+END_SRC
+** Ivy
+https://sam217pa.github.io/2016/09/13/from-helm-to-ivy/
+
 * Themes
  There are two ways to load a theme. Both assume the theme is installed and
  available. You can either set ~doom-theme~ or manually load a theme with the
@@ -112,4 +126,24 @@ To send mails we need to configure ~smtp~
 :bind (:map sphinx-doc-mode-map
             ("SPC C-d" . sphinx-doc))
 )
+#+END_SRC
+** ELPY - Emacs Lisp Python Environment
+Emacs Lisp Python Environment
+#+BEGIN_SRC emacs-lisp
+(use-package elpy
+:config
+    (progn (elpy-enable)
+        (setq python-shell-interpreter "ipython"
+        python-shell-interpreter-args "-i --simple-prompt"
+        python-shell-prompt-detect-failure-warning nil)
+        (add-to-list 'python-shell-completion-native-disabled-interpreters "jupyter")
+    )
+)
+;; TODO:  (add-hook 'python-mode-hook 'jedi:setup)
+;(setq python-shell-interpreter "ipython5" python-shell-interpreter-args "--simple-prompt --pprint")
+;(elpy-use-ipython) #+END_SRC #+RESULTS: : /usr/local/anaconda3/bin/anaconda ** EPC
+;;Requirement for Jedi
+;#+BEGIN_SRC emacs-lisp
+;(use-package epc ;:defer t)
+;(setq jedi:server-command '("/Users/pollakg/.emacs.d/elpa/jedi-core-20170121.610/jediepcserver.py"))
 #+END_SRC

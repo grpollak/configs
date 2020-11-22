@@ -57,3 +57,5 @@
 (package! sphinx-doc)
 ;; LaTeX
 (package! px)
+(package! elpy)
+(package! helm-descbinds)
