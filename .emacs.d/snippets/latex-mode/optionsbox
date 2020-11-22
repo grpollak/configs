@@ -1,9 +1,0 @@
-# -*- mode: snippet -*-
-#name : optionsbox
-#key : optb
-# group: box
-#contributor : Georg Pollak
-# --
-\begin{optionsbox}${1:[${2:Options}]}${3:{${4:Title}}}
-	$0	
-\end{optionsbox}

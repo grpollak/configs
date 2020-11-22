@@ -1,6 +1,0 @@
-# -*- mode: snippet -*-
-#name : note
-#key : note
-#contributor : 
-# --
-\note[item]<$1->{$2}$0

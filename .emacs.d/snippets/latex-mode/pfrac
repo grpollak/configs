@@ -1,6 +1,0 @@
-# -*- mode: snippet -*-
-#name : pfrac
-#key : pfrac
-#contributor : Georg Pollak
-# --
-\pfrac{${1:numerator}}{${2:denominator}}$0

@@ -1,6 +1,0 @@
-# -*- mode: snippet -*-
-#name : sum
-#key : sum
-#contributor : Georg Pollak
-# --
-\sum_{${1:i=1}}$0

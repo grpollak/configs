@@ -1,6 +1,0 @@
-# -*- mode: snippet -*-
-#name : newcolumn
-#key : newcol
-#contributor : Georg Pollak
-# --
-	\vfill\columnbreak

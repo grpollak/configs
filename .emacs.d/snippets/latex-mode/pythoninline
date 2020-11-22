@@ -1,7 +1,0 @@
-# -*- mode: snippet -*-
-#name : pythoninline
-#key : pyin
-#group: coding 
-#contributor : Georg Pollak
-# --
-\pythoninline{$1}$0

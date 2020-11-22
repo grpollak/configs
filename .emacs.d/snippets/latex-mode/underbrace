@@ -1,6 +1,0 @@
-# -*- mode: snippet -*-
-#name : underbrace
-#key : underb
-#contributor : Georg Pollak
-# --
-\underbrace{$1}_{$2}$0

@@ -1,9 +1,0 @@
-# -*- mode: snippet -*-
-#name : plaincodebox
-#key : pcbox
-#group: coding
-#contributor : Georg Pollak
-# --
-\begin{plaincodebox}${1:<${2:minted options}>}${3:[${4:options}]}${5:{${6:language}}}
- $0
-\end{plaincodebox}

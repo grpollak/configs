@@ -1,6 +1,0 @@
-# -*- mode: snippet -*-
-#name : input
-#key : input
-#contributor : 
-# --
-\input{$1}$0

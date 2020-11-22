@@ -1,7 +1,0 @@
-# -*- mode: snippet -*-
-#name : paragraph
-#key : parag
-#contributor : Georg Pollak
-# --
-\paragraph{${1:name}}${2:\label{para:${1:$(downcase(replace-regexp-in-string "[[:space:]]" "_" yas-text))}}}
-$0

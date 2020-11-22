@@ -1,6 +1,0 @@
-# -*- mode: snippet -*-
-#name : nalign
-#key : nal
-#contributor : Georg Pollak
-# --
-\\[-1\jot]$0

@@ -1,6 +1,0 @@
-# -*- mode: snippet -*-
-#name : print
-#key : prt
-#contributor : 
-# --
-print($1)$0

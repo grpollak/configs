@@ -1,9 +1,0 @@
-# -*- mode: snippet -*-
-# name : frame
-# key : frame
-# group: beamer
-# contributor : Georg R. Pollak
-# --
-\begin{frame}${1:{${2:Title}}}
-    $0
-\end{frame}

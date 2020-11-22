@@ -1,9 +1,0 @@
-# -*- mode: snippet -*-
-# name : theorembox
-# key : thb
-# group: box
-# contributor : Georg Pollak
-# --
-\begin{theorembox}
-	$1 
-\end{theorembox}$0

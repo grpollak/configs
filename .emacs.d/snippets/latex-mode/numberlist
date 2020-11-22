@@ -1,9 +1,0 @@
-# -*- mode: snippet -*-
-#name : numberlist
-#key : nblist
-#groupe: lists
-#contributor : Georg Pollak
-# --
-\begin{numberlist}
-\item $1
-\end{numberlist}$0

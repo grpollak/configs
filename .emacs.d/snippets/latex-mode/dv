@@ -1,7 +1,0 @@
-# -*- mode: snippet -*-
-#name : dv
-#key : dv
-#gourp: differential calculus 
-#contributor : Georg Pollak
-# --
-\dv{${1:numerator}}{${2:denominator}}$0

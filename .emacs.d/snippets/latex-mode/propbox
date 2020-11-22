@@ -1,8 +1,0 @@
-# -*- mode: snippet -*-
-#name : propbox
-#key : propb
-#contributor : Georg Pollak
-# --
-\begin{propbox}\nospacing
-	$1	
-\end{propbox}$0

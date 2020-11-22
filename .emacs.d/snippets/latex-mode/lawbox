@@ -1,9 +1,0 @@
-# -*- mode: snippet -*-
-#name : lawbox
-#key : lawb
-# group: box
-#contributor : Georg Pollak
-# --
-\begin{lawbox}\nospacing
-   $0
-\end{lawbox}

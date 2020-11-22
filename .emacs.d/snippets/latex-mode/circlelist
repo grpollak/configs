@@ -1,9 +1,0 @@
-# -*- mode: snippet -*-
-#name : circlelist
-#key : clist
-# groupe: items
-#contributor : Georg Pollak
-# --
-\begin{circlelist}
-	\item $1
-\end{circlelist}$0

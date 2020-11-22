@@ -1,8 +1,0 @@
-# -*- mode: snippet -*-
-# name: sectionbox
-# key: secb
-# group: box
-# --
-\begin{sectionbox}${1:[${2:Title}]}\nospacing
-	$3	
-\end{sectionbox}$0

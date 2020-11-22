@@ -1,7 +1,0 @@
-# -*- mode: snippet -*-
-#name : subsubsubsection
-#key : ssssec
-#contributor : Georg Pollak
-# --
-\subsubsubsection{${1:name}}${2:\label{subsubsubsec:${1:$(downcase(replace-regexp-in-string "[[:space:]]" "_" yas-text))}}}
-$0

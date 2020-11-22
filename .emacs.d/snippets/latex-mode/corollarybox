@@ -1,9 +1,0 @@
-# -*- mode: snippet -*-
-#name : corollarybox
-#key : corb
-#group: box
-#contributor : Georg Pollak
-# --
-\begin{corbox}\nospacing
-	$1	
-\end{corbox}$0

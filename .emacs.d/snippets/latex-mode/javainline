@@ -1,7 +1,0 @@
-# -*- mode: snippet -*-
-#name : javainline
-#key : javain
-#group: coding 
-#contributor : Georg Pollak
-# --
-\javainline/$1/$0

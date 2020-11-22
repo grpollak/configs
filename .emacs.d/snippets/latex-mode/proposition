@@ -1,9 +1,0 @@
-# -*- mode: snippet -*-
-#name : proposition
-#key : proposition
-#group : theorem
-#contributor : Georg Pollak
-# --
- \begin{proposition}[${1:Title}]
-	$2			 
- \end{proposition}$0 

@@ -1,9 +1,0 @@
-# -*- mode: snippet -*-
-#name : formula
-#key : formula
-# group: theorem
-#contributor : Georg Pollak
-# --
-\begin{formula}[${1:title}]
-    $0
-\end{formula}

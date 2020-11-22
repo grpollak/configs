@@ -1,6 +1,0 @@
-# -*- mode: snippet -*-
-#name : subtext
-#key : _
-#contributor : Georg Pollak
-# --
-_{\text{$1}}$0

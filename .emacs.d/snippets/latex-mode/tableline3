@@ -1,7 +1,0 @@
-# -*- mode: snippet -*-
-#name : tableline3
-#key : tl3
-#contributor : 
-# --
-$1 & $2 & $3 \\\
-$0

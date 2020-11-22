@@ -1,6 +1,0 @@
-# -*- mode: snippet -*-
-#name : latexinline
-#key : latexin
-#contributor : Georg Pollak
-# --
-\latexinline{$1}$0

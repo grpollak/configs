@@ -1,9 +1,0 @@
-# -*- mode: snippet -*-
-#name : propertybox
-#key : propertyb
-# group: box
-#contributor : Georg Pollak
-# --
-\begin{propertybox}\nospacing
-   $0
-\end{propertybox}

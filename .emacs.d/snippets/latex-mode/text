@@ -1,7 +1,0 @@
-# -*- mode: snippet -*-
-#name : text
-#key : te
-#group: text
-#contributor : Georg Pollak
-# --
-\text{$1}$0

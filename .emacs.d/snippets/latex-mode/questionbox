@@ -1,9 +1,0 @@
-# -*- mode: snippet -*-
-#name : questionbox
-#key : questionb
-#group: box
-#contributor : 
-# --
-\begin{questionbox}${1:[${2:Title}]}\nospacing
-	$3	
-\end{questionbox}$0

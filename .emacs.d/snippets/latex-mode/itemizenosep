@@ -1,9 +1,0 @@
-# -*- mode: snippet -*-
-#name : itemizenosep
-#key : itemn
-#groupe: lists
-#contributor : Georg Pollak
-# --
-\begin{itemizenosep}
-\item $0
-\end{itemizenosep}

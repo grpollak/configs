@@ -1,6 +1,0 @@
-# -*- mode: snippet -*-
-# name: cleveref \cref
-# key: cref
-# contributor : Georg Pollak
-# --
-\cref{${1:label$(unless yas/modified-p (reftex-reference nil 'dont-insert))}}$0

@@ -1,9 +1,0 @@
-# -*- mode: snippet -*-
-#name : law
-#key : law
-# group: theorem
-#contributor : Georg Pollak
-# --
-\begin{law}[${1:title}]
-    $0
-\end{law}

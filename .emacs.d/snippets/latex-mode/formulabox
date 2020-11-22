@@ -1,9 +1,0 @@
-# -*- mode: snippet -*-
-#name : formulabox
-#key : formulab
-#contributor : Georg Pollak
-# group: box
-# --
-\begin{formulabox}\nospacing
-   $0
-\end{formulabox}
