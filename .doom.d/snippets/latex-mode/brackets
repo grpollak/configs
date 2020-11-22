@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+#name : brackets
+#key : left
+#contributor : Georg Pollak
+# --
+\left$1$0\right$1

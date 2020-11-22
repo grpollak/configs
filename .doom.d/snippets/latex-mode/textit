@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+#name : textit
+#key : tei
+#group: text
+#contributor : Georg Pollak
+# --
+\textit{$1}$0

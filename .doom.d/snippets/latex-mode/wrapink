@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+#name : wrapink
+#key :  wrapink
+#contributor : Georg Pollak
+# --
+\begin{wrapfigure}{${1:r}}{${2:0.4}\linewidth}	
+\centering{
+	\inkscape[${3:80pt}]{${4:figures/}$5.pdf_tex}
+}
+\end{wrapfigure}
+$0

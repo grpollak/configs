@@ -1,0 +1,23 @@
+# -*- mode: snippet -*-
+#name : tmatrix
+#key : tmatrix
+#contributor : Georg Pollak
+# --
+\begin{tikzpicture}[baseline=-0.5ex,
+            every left delimiter/.style={xshift=.75em},
+            every right delimiter/.style={xshift=-.75em}
+            ]
+    \matrix (M) [
+    inner sep=1pt, nodes={inner sep=.2em}, 
+    column sep=3pt, row sep=0.7pt,
+    matrix of math nodes, nodes in empty cells, right delimiter={]},left delimiter={[}]
+    {
+    1 & & 									&  \\
+        & &\optlambda					 		&  \\
+        & & 									&  \\
+        & &           						&1 \\
+    };
+    \draw[loosely dotted] (M-1-1)-- (M-4-4);
+    \node [xshift=0.5em] at  (M-2-4.east) {$\optidxk$};
+    \node [yshift=0.8em] at  (M-1-3.north) {$\optidxi$}; 
+\end{tikzpicture}

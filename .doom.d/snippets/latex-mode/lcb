@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+#name : lcb
+#key : lcb
+#contributor : Georg Pollak
+# --
+\left\\{$0\right\\}

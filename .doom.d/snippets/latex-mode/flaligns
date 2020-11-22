@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+#name : flaligns
+#key : flaligns
+#goup: math
+#contributor : Georg Pollak
+# --
+\begin{flalign*}
+  $1
+\end{flalign*}$0

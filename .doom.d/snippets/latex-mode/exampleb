@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+#name : exampleb
+#key : exampleb
+#contributor : Georg Pollak
+# group: box
+# --
+\begin{examplebox}\nospacing
+   $0
+\end{examplebox}

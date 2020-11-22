@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+#name : texto
+#key : texto
+#contributor : Georg Pollak
+#group : coding
+# --
+\texttt{\optc{$1}}$0

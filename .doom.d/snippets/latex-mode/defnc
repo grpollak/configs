@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: defnc
+# key: defnc
+# group: theorem
+# --
+\begin{defncbox}
+    \begin{defnc}${1:[${2:title}]}${3:\label{defnc:${2:$(downcase(replace-regexp-in-string "[[:space:]]" "_" yas-text))}}}
+        $0
+    \end{defnc}
+\end{defncbox}

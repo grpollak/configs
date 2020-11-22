@@ -1,0 +1,7 @@
+# key:nb
+# name: notebox
+# group: box
+# --
+\begin{notebox}[${1:Note}]\nospacing
+    $0
+\end{notebox}

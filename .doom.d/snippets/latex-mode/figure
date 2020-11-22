@@ -1,0 +1,13 @@
+# -*- mode: snippet -*-
+#name : figure
+#key : fig
+# group: figures
+#contributor : Georg Pollak
+# --
+\begin{figure}[${1:H}]
+    \centering
+    \includegraphics[width=${2:1.0}\textwidth]{figures/$3.png}
+    \caption{$4}
+    \label{fig:$5}
+\end{figure}
+$0

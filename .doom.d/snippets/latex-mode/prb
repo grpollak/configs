@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+#name : probability \prob
+#key : prb
+#group : math
+#contributor : Georg Pollak
+# --
+\prob($1)$0

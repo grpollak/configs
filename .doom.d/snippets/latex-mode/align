@@ -1,0 +1,7 @@
+# key: align
+# name: align
+# group: math
+# --
+\begin{align$1}
+    $0
+\end{align}

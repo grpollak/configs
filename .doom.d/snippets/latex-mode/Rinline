@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+#name : Rinline
+#key : rin
+#contributor : Georg Pollak
+#group: coding 
+# --
+\Rinline{$1}$0

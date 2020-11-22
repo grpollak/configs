@@ -1,0 +1,14 @@
+# -*- mode: snippet -*-
+#name : javacode
+#key : javacode
+#contributor : 
+# --
+
+\begin{figure}[H]
+\centering
+\begin{javacode}
+$0
+\end{javacode}
+${1:\label{fig:$2}}
+${3:\caption{$4}}
+\end{figure}

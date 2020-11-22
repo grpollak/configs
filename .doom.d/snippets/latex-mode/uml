@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+#name : uml
+#key : uml
+#contributor : 
+# --
+\begin{figure}[H]	
+  \centering
+  \resizebox{${1:$2{:\linewidth}}}{!}{\tikzset{font=\Huge}\input{uml/${3:path}.tex}}
+\end{figure}
+$0

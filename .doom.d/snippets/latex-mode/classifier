@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+#name : classifier
+#key : clf
+#contributor : Georg Pollak
+# --
+\classifier$0

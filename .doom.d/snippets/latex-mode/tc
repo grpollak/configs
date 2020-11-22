@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+#name : tc
+#key : tc
+#contributor : Georg Pollak
+# --
+\tc{${1:black}}{$2}$0

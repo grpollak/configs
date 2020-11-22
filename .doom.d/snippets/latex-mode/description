@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+#name : description
+#key : desc
+#group: theorem
+# --
+\begin{descriptionbox}
+    \begin{description}${1:[${2:title}]}${3:\label{description:${2:$(downcase(replace-regexp-in-string "[[:space:]]" "_" yas-text))}}}
+        $0
+    \end{description}
+\end{descriptionbox}

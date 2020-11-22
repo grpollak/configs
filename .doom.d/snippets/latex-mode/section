@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+#name : section
+#key : sec
+#contributor : Georg Pollak
+# --
+\section{${1:name}}${2:\label{sec:${1:$(downcase(replace-regexp-in-string "[[:space:]]" "_" yas-text))}}}
+$0

@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+#name : int
+#key : int
+#group: Integration
+#contributor : Georg Pollak
+# --
+\int_{${1:0}}^{${2:\infty}}$0

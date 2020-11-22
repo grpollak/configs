@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+#name : postulat
+#key : post
+# group: theorem
+#contributor : Georg Pollak
+# --
+\begin{post}[${1:title}]
+    $0
+\end{post}

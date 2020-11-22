@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+#name : tarrow
+#key : tarrow
+#contributor : Georg Pollak
+#group: tikz
+# --
+\draw[->,${1:bend right/left}] (${1:node1.east}) -- (${2:node2.west});

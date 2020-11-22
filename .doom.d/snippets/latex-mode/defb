@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: defnb
+# key: defnb
+# group: box
+# --
+\begin{defnbox}\nospacing
+   $0
+\end{defnbox}

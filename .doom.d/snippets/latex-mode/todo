@@ -1,0 +1,4 @@
+# key: todo
+# name: todo
+# --
+\todo[${1:inline}]{$2}$0

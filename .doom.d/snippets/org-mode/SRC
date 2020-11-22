@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+#name : Plain SRC Block
+#key : src
+#contributor : 
+# --
+#+BEGIN_SRC ${1:language}
+    $2          
+#+END_SRC
+$0

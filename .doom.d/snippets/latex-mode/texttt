@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+#name : texttt
+#key : texttt
+#group: coding
+#contributor :Georg Pollak 
+# --
+\texttt{$1}$0

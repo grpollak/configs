@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+#name : bashinline
+#key : bashin
+#group: coding 
+#contributor : Georg Pollak
+# --
+\bashinline{$1}$0

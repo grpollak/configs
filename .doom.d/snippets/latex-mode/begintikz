@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+#name : tbegin
+#key : tbegin
+#contributor : Georg Pollak
+#group: tikz
+# --
+\begin{tikzpicture}[${1:every node/.style={thick}}${2:,scale=${3:0.9}, every node/.style={scale=${3:0.9}}]
+	$0															
+\end{tikzpicture}

@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+#name : theorem
+#key : theorem
+#group : theorem
+#contributor : Georg Pollak
+# --
+\begin{theorembox}\nospacing
+  \begin{theorem}${1:[${2:title}]}${3:\label{theorem:${2:$(downcase(replace-regexp-in-string "[[:space:]]" "_" yas-text))}}}
+	$4 
+  \end{theorem}
+\end{theorembox}$0

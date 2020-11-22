@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+#name : \inprd
+#key : inprd
+#group: math
+#contributor : Georg Pollak
+# --
+\inprd{$1}{$2}$0

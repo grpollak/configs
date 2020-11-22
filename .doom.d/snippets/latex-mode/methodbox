@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+#name : methodbox
+#key : mbox
+#group: box
+#contributor : Georg Pollak
+# --
+\begin{methodbox}${1:[${2:Options}]}${3:{${4:Title}}}
+	$0	
+\end{methodbox}

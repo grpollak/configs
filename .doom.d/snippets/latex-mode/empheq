@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+#name : empheq
+#key : empheq
+#group: math
+#contributor : Georg Pollak
+# --
+\begin{empheq}[${1:box=\fbox}]{${2:align}}
+		$0
+\end{empheq}

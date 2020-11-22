@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+#name : vector_inverse
+#key : veci
+#group: math
+# --
+\\vec{$1}^{-1}$0

@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+#name : alignats
+#key : alignats
+#group: math
+#contributor : Georg Pollak
+# --
+\begin{alignat*}{$1}
+   $2
+\end{alignat*}$0

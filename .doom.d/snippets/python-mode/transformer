@@ -1,0 +1,34 @@
+# -*- mode: snippet -*-
+#name : Scikit Transformer derived class
+#key : transformer
+#contributor : 
+# --
+from sklearn.utils.validation import check_X_y, check_array, check_is_fitted
+
+class $1(skl.base.BaseEstimator, skl.base.TransformerMixin):
+    """$2"""
+    def __init__(self):
+        super($1, self).__init__()
+        ${3:# TODO: initialize...}
+
+    def fit(self, X, y):
+        """Can be used to fit parameters
+            if we only want to transform just return self
+        """
+        # check if X and y are consistent
+        # multi_output for multi labels
+        X, y = check_X_y(X, y, multi_output=False)
+        ${4:# TODO: implement, fit if we want to fit
+            # then store fitted coefficients but do not transform X yet}
+        return self
+
+    def transform(self, X, y=None):
+        # Checks if the estimator is fitted by verifying the presence
+        # of “all_or_any” of the passed attributes rais a NotFittedError
+        # with message otherwise 
+        ${5:check_is_fitted(self, ${6:["attributes"]})}
+        X = check_array(X)
+        ${7:# TODO: implement and return transformed X}
+
+
+

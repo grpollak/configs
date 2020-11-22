@@ -1,0 +1,13 @@
+# -*- mode: snippet -*-
+#name : tabular
+#key : tabular
+#contributor : 
+# --
+\begin{tabular}[${1:pos:(b|c|t)}]{${2:(l|c|r|p[{width\}]|m[{width\}]|b[{width\}])[|]}}
+${0:\hline
+cell1 & cell2 & cell3 \\\
+\hline
+cell4 & cell5 & cell6 \\\
+\hline
+cell7 & cell8 & cell9 \hline
+}\end{tabular}

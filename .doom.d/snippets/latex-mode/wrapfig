@@ -1,0 +1,12 @@
+# -*- mode: snippet -*-
+#name : wrapfig
+#key : wrapfig
+#contributor : Georg Pollak
+# --
+\begin{wrapfigure}{${1:r}}{${2:0.45\linewidth}}
+		\centering
+		\vspace{-10pt}
+		\includegraphics[${2:width=0.45\linewidth}]{figures/${3:path_to_file}.png}
+		${4:\caption{${5:text}}}
+\end{wrapfigure}
+$0

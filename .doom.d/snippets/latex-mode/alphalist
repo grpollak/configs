@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+#name : alphalist
+#key : alphalist
+#groupe: lists
+#contributor : Georg Pollak
+# --
+\begin{alphalist}
+\item $1
+\end{alphalist}$0

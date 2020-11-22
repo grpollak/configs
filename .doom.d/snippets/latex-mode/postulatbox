@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+#name : postulatbox
+#key : postb
+# group: box
+#contributor : Georg Pollak
+# --
+\begin{postbox}\nospacing
+   $0
+\end{postbox}
