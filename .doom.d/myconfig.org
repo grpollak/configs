@@ -17,6 +17,10 @@
         )
 )
 #+END_SRC
+
+#+RESULTS:
+: helm-descbinds
+
 ** Ivy
 https://sam217pa.github.io/2016/09/13/from-helm-to-ivy/
 
@@ -101,19 +105,20 @@ change `org-directory'. It must be set before org loads!
 (use-package px)
 #+END_SRC
 * Mail
-Each path is relative to `+mu4e-mu4e-mail-path', which is ~/.mail by default
-To send mails we need to configure ~smtp~
+Each path is relative to `+mu4e-mu4e-mail-path',
+which is [[file:~/.mail/][~/.mail]] by default To send mails we need to configure ~smtp~
+** ETH Mail
 #+BEGIN_SRC emacs-lisp
-;; (set-email-account! "Gmail"
-;;   '((mu4e-sent-folder       . "/gmail/[Gmail]/Gesendet")
-;;     (mu4e-drafts-folder     . "/gmail/[Gmail]/Entw&APw-rfe")
-;;     (mu4e-trash-folder      . "/gmail/[Gmail]/Papierkorb")
-;;     (mu4e-refile-folder     . "/gmail/[Gmail]")
-;;     (smtpmail-smtp-user     . "pollakgeorg@gmail.com")
-;;     (user-mail-address      . "pollakgeorg@gmail.com")    ;; only needed for mu < 1.4
-;;     (mu4e-compose-signature . "---\nGeorg R. Pollak"))
-;;   t)
-(setq mu4e-view-show-images t)
+(set-email-account! "ETH"
+  '((mu4e-sent-folder       . "/eth/Sent")
+    (mu4e-drafts-folder     . "/eth/Drafts")
+    (mu4e-trash-folder      . "/eth/Trash")
+    ;; TODO (mu4e-refile-folder     . "/gmail/[Gmail]")
+    (smtpmail-smtp-user     . "pollakg@student.ethz.ch")
+    (user-mail-address      . "pollakg@student.ethz.ch")    ;; only needed for mu < 1.4
+    (mu4e-compose-signature . "---\nGeorg R. Pollak"))
+  t)
+(setq mu4e-view-show-images t)          ;
 #+END_SRC
 
 #+RESULTS:
