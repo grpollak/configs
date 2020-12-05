@@ -1,0 +1,33 @@
+#!/bin/bash
+
+BATTERY=-wo "Full\|Charging\|Discharging"0
+# BATTERY_INFO=$(acpi -b | grep "Battery ${BATTERY}")
+BATTERY_INFO=$(acpi -b | grep "Battery")
+BATTERY_MAIN_POWER=$(acpi -b | grep "Battery" | grep -o '[0-9]\+%' | tr -d '%' | sort -r -n | head -n 1)
+BATTERY_MAIN=$(echo "${BATTERY_INFO}" | grep "${BATTERY_MAIN_POWER}\+%" | tr -d '%')
+BATTERY_STATE=$(echo "${BATTERY_MAIN}" | grep -wo "Full\|Charging\|Discharging")
+# BATTERY_POWER=$(echo "${BATTERY_MAIN}" | grep -o '[0-9]\+%' | tr -d '%')
+
+URGENT_VALUE=5
+URGENT_VALUE_LOWER=$((URGENT_VALUE-1))
+
+if [[ "${BATTERY_STATE}" = "Charging" ]]; then
+  echo "${BATTERY_MAIN_POWER}%+"
+  echo ""
+elif [[ "${BATTERY_STATE}" = "Discharging" ]]; then
+  echo "${BATTERY_MAIN_POWER}%-"
+  echo ""
+else
+  echo "${BATTERY_MAIN_POWER}%"
+  echo ""
+fi
+
+if (("${BATTERY_MAIN_POWER}" <= "${EMERGENCY_HIBERNATE}")); then
+  systemctl hibernate
+fi
+
+if (("${BATTERY_MAIN_POWER}" >= "${URGENT_VALUE_LOWER}" && "${BATTERY_MAIN_POWER}" <= "${URGENT_VALUE}" )); then
+# i3blocks exit code 33 will set urgent i3 key to true
+  notify-send -t 5000 --urgency=critical "Battery ${BATTERY_MAIN_POWER}%" --icon="battery-low"
+  exit 33
+fi
