@@ -9,8 +9,16 @@
 (setq user-full-name "Georg R. Pollak"
       user-mail-address "pollakgeorg@gmail.com")
 
-;; Load actual configuration file
+;; Starts the Emacs server
+;; TODO
+;; (server-start)
+;; TODO move to myinit.org and understand why it is not working so far
 (setq +latex-viewers '(evince))
+;; set mode of scratch buffer to org mode
+(setq initial-major-mode 'org-mode)
+;; Load actual configuration file
+;; (setq doom-font (font-spec :family "monospace" :size 20 :weight 'semi-light)
+;;       doom-variable-pitch-font (font-spec :family "sans" :size 20))
 (org-babel-load-file (expand-file-name "~/.doom.d/myconfig.org"))
 
 
