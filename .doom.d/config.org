@@ -193,24 +193,14 @@ Helper function that can be used inside dir-locals.el to query master file autom
 
 ** Yassnippet
 *** Helper Functions
-**** Automatic Label Creation for Theorems TODO finish this sometime
+**** Automatic Label Creation for Theorems
+TODO finish this sometime
 #+BEGIN_SRC emacs-lisp
-(defun create-label-for-theorem (title)
-    (print title)
-    (print (downcase(replace-regexp-in-string "[\\$]*[^\\$\\\\]\\$" ""
-                (replace-regexp-in-string "[[:space:]]" "_"
-                        (replace-regexp-in-string "\\\\" ""
-                                (replace-regexp-in-string "\\\\([\\\\]\\\\([^ ]*\\\\|[^\\\\]\\\\)\\\\|[\\\\$][^\\\\$]*[\\\\$]\\\\)" ""
-                                        (replace-regexp-in-string "[\\\\tc\{black\}\{].*\}" "" yas-text nil t
-                                        )
-                                )
-                        )
-                )
-                    )
-           )
-    )
-)
+(load-file (expand-file-name "~/.doom.d/lisp/latex/labelcreation.el"))
 #+END_SRC
+
+#+RESULTS:
+: t
 
 * COMMENT Mail
 Each path is relative to `+mu4e-mu4e-mail-path',
