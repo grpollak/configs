@@ -1,0 +1,418 @@
+# Defaul config for sway
+#
+# Copy this to ~/.config/sway/config and edit it to your liking.
+#
+# Read `man 5 sway` for a complete reference.
+#============================================================================================
+    #                              Key Bindings 
+#============================================================================================
+# Logo key. Use Mod1 for Alt.
+# focus_follows_mouse no
+# GOAL => remap key also to bindcode 127 Mod4
+set $mod Mod4
+#                                Inputs German Accents
+#============================================================================================
+# TODO: figure out how to only use this with caps lock but not with alt-gr
+#input 9456:261:Das_Keyboard_Das_Keyboard_P13 xkb_layou  us-german-umlaut
+#                                Use vim keybindings for movment
+#input "type:keyboard" {
+#    xkb_layout us
+#    xkb_variant altgr-intl
+#    xkb_options compose:menu,level3:caps_switch
+#}
+#============================================================================================
+set $left h
+set $down j
+set $up k
+set $right l
+#============================================================================================
+#                                  Screens and Output config
+#============================================================================================
+# You can get the names of your outputs by running: swaymsg -t get_outputs
+#output eDP-1 Lenovo Screen 2560x1440
+output eDP-1 res 2560x1440 pos 2560 0 scale 2
+#resolution Dell Screen 2560x1080
+output HDMI-A-1 pos 0 0 res 2560x1080 scale 1
+workspace 1 output HDMI-A-1
+workspace 8 output eDP-1
+
+# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
+output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+
+#============================================================================================
+#                                     Termianl
+#============================================================================================
+set $term env KITTY_ENABLE_WAYLAND=1 kitty
+#                                      Screenshots with Slurp
+#============================================================================================
+bindsym --release Print exec grim -g "$(slurp)" - | wl-copy
+
+#============================================================================================
+#                                     Application Launcher
+#============================================================================================
+# We use rofi
+set $menu rofi -show combi -combi-modi "windowcd,drun,ssh" -show-icons -font "hack 11"
+#| xargs swaymsg exec
+#                                      Add calculater to rofi
+#============================================================================================
+set $calculator rofi -show calc -modi calc -no-show-match -no-sort
+#============================================================================================
+#                                  Browser
+#============================================================================================
+set $browser google-chrome-stable
+#============================================================================================
+#                                     Documents
+#============================================================================================
+set $pdf evince
+#============================================================================================
+#                                  Window Managment
+#============================================================================================
+set $ws1 1 
+set $ws2 2 
+set $ws3 3 
+set $ws4 4
+set $ws5 5
+set $ws6 6
+set $ws7 7
+set $ws8 8
+set $ws9 9
+set $ws10 10
+
+# set $ws1 "1:   "
+# set $ws2 "2:   "
+# set $ws3 "3:   "
+# set $ws4 "4:   "
+# set $ws5 "5:   "
+# set $ws6 "6:   "
+# set $ws7 "7:   "
+
+
+# switch to workspace
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws10
+
+
+#
+# Assigning applications to workspaces 
+#
+
+# Assign termite to workspace 1/work if it exits 
+#assign [class="termite"] $wsp1
+#assign [class="emacs"] $wsp1
+#assign [class="termite"] $wsp1
+#assign [class="firefox"] $wsp2
+#assign [class="thunderbird"] $wsp8
+
+#============================================================================================
+#                                  Startup
+#============================================================================================
+workspace $ws1; exec $term -e "ranger"; exec $term; exec 'emacsclient -a "" -c'
+# workspace 8; exec owncloud
+#workspace 3:Mail; exec thunderbird
+#exec termite; move container to workspace 1:Work
+
+
+
+
+### Input configuration
+#
+# Example configuration:
+#
+#   input "2:14:SynPS/2_Synaptics_TouchPad" {
+#       dwt enabled
+#       tap enabled
+#       natural_scroll enabled
+#       middle_emulation enabled
+#   }
+#
+# You can get the names of your inputs by running: swaymsg -t get_inputs
+# Read `man 5 sway-input` for more information about this section.
+
+#============================================================================================
+#                                  Key Bindings
+#============================================================================================
+    # start a terminal
+    bindsym $mod+Return exec $term
+    bindsym $mod+Shift+Return exec $term -e "ranger"
+
+    # kill focused window
+    bindsym $mod+Shift+q kill
+
+    # start your launcher
+    bindsym $mod+space exec $menu
+
+    # start your calculator
+    bindsym $mod+c exec $calculator
+    # start password selector
+    bindsym $mod+p exec $term -e "passmenu"
+
+    # Drag floating windows by holding down $mod and left mouse button.
+    # Resize them with right mouse button + $mod.
+    # Despite the name, also works for non-floating windows.
+    # Change normal to inverse to use left mouse button for resizing and right
+    # mouse button for dragging.
+    floating_modifier $mod normal
+
+    # reload the configuration file
+    bindsym $mod+Shift+r reload
+
+    # exit sway (logs you out of your wayland session)
+    bindsym $mod+Shift+e exit
+    # Green clip clipboard
+    bindsym $mod+Shift+c exec rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
+
+#                                      Window Movement
+#============================================================================================
+    # Move your focus around
+    bindsym $mod+$left focus left
+    bindsym $mod+$down focus down
+    bindsym $mod+$up focus up
+    bindsym $mod+$right focus right
+    # or use $mod+[up|down|left|right]
+    bindsym $mod+Left focus left
+    bindsym $mod+Down focus down
+    bindsym $mod+Up focus up
+    bindsym $mod+Right focus right
+
+    # _move_ the focused window with the same, but add Shift
+    bindsym $mod+Shift+$left move left
+    bindsym $mod+Shift+$down move down
+    bindsym $mod+Shift+$up move up
+    bindsym $mod+Shift+$right move right
+    # ditto, with arrow keys
+    bindsym $mod+Shift+Left move left
+    bindsym $mod+Shift+Down move down
+    bindsym $mod+Shift+Up move up
+    bindsym $mod+Shift+Right move right
+
+    # quick_back_and_forth_work_space
+    workspace_auto_back_and_forth no
+    bindsym $mod+z workspace back_and_forth
+#                                      Window Layout Managment
+#============================================================================================
+
+    # You can "split" the current object of your focus with
+    # $mod+b or $mod+v, for horizontal and vertical splits
+    # respectively.
+    bindsym $mod+b splith
+    bindsym $mod+v splitv
+
+    # Switch the current container between different layout styles
+    bindsym $mod+s layout stacking
+    bindsym $mod+w layout tabbed
+    bindsym $mod+e layout toggle split
+
+    # Make the current focus fullscreen
+    bindsym $mod+f fullscreen
+
+    # Toggle the current focus between tiling and floating mode
+    bindsym $mod+Shift+t floating toggle
+
+    # Swap focus between the tiling area and the floating area
+    bindsym $mod+t focus mode_toggle
+
+    # move focus to the parent container
+    bindsym $mod+a focus parent
+
+
+    # enable floating mode for all Specified windows
+    for_window [class="blueman-assistant"] floating enable
+    for_window [class="blueman-manager"] floating enable
+
+#
+# Scratchpad:
+#
+    # Sway has a "scratchpad", which is a bag of holding for windows.
+    # You can send windows there and get them back later.
+
+    # Move the currently focused window to the scratchpad
+    bindsym $mod+Shift+minus move scratchpad
+
+    # Show the next scratchpad window or hide the focused scratchpad window.
+    # If there are multiple scratchpad windows, this command cycles through them.
+    bindsym $mod+minus scratchpad show
+
+#                                      Resizing Windows
+#============================================================================================
+
+mode "resize" {
+    # left will shrink the containers width
+    # right will grow the containers width
+    # up will shrink the containers height
+    # down will grow the containers height
+    bindsym $left resize shrink width 10 px or 10 ppt
+    bindsym $down resize grow height 10 px or 10 ppt
+    bindsym $up resize shrink height 10 px or 10 ppt
+    bindsym $right resize grow width 10 px or 10 ppt
+
+    # ditto, with arrow keys
+    bindsym Left resize shrink width 10 px or 10 ppt
+    bindsym Down resize grow height 10 px or 10 ppt
+    bindsym Up resize shrink height 10 px or 10 ppt
+    bindsym Right resize grow width 10 px or 10 ppt
+
+    # return to default mode
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+r mode "resize"
+
+#============================================================================================
+#                                  Status Bar
+#============================================================================================
+
+# Read `man 5 sway-bar` for more information about this section.
+bar {
+    status_command i3blocks
+    # status_command i3status
+    position bottom
+    colors {
+        statusline #ffffff
+        background #323232
+        font nerd-fonts-complete 11
+        # focused_workspace  #4B8B8B #4B8B8B #ffffff
+        # active_workspace   #ffffff #ffffff #ffffff
+        # inactive_workspace #1b1818 #232323 #ffffff
+        # urgent_workspace   #ffffff #ffffff #4B8B8B
+        # inactive_workspace #32323200 #32323200 #5c5c5c
+    }
+}
+
+#                                      Openening Standard Programs
+#============================================================================================
+
+  # Press $mod+o followed by either f, t, Escape or Return to launch firefox,
+  # thunderbird or return to the default mode, respectively.
+  set $mode_launcher Launch: [a]genda [b]lueman [c]hrome [e]macs [>+x].tex f]irefox [h]top [i]ncsacpe [m]ail [r]anger [s]potify [S]way config [t]hunderbird
+  set $pdf_launcher Open pdf: [a]rch linux [c]pp [h]pc [g]it [m]ath [l]inux [p]ython
+
+  bindsym $mod+o mode "$mode_launcher"
+  
+  mode "$mode_launcher" {
+
+      bindsym h exec $term -e "htop"; mode "default"
+      bindsym $mod+s exec 'emacsclient -a "" -c "/home/pollakg/.config/sway/config"'; mode "default";
+      bindsym s exec spotify; mode "default";
+
+      bindsym t exec thunderbird; mode "default"
+      
+      bindsym f exec firefox; mode "default"
+      bindsym c exec $browser; mode "default"
+      bindsym a exec emacsclient -a "" -n -c --eval '(org-agenda nil "n")'; mode "default"
+      bindsym m exec emacsclient -a "" -n -c --eval '(mu4e)'; mode "default"
+
+      bindsym $mod+x mode "$emacs_launcher"
+      bindsym $mod+p mode "$pdf_launcher"
+      bindsym e exec 'emacsclient -a "" -c'; mode "default"
+      # bindsym s exec skypeforlinux; mode "default"
+      bindsym b exec blueman-manager; mode "default"
+
+      bindsym i exec inkscape; mode "default"
+      bindsym r exec $term -e "ranger"; mode "default"
+
+
+      bindsym Escape mode "default"
+      bindsym Return mode "default"
+
+  }
+
+#============================================================================================
+#                                      Emacs file launcher mode
+#============================================================================================
+set $emacs_launcher Open tex: [a]rch linux [b]bash [c]pp [f]inance [m]ath [h]pc [g]it [l]inux [p]ython [s]tatistics
+
+mode "$emacs_launcher" {
+    bindsym l exec 'emacsclient -a "" -c "/home/pollakg/polybox/formularies/LaTeX/LaTeX/latex_submodule/latex.tex"'; mode "default"
+    bindsym a exec 'emacsclient -a "" -c "/home/pollakg/polybox/formularies/linux/linux/linux_submodule/linux.tex"'; mode "default"
+    bindsym b exec 'emacsclient -a "" -c "/home/pollakg/polybox/formularies/bash/bash/bash_submodule/bash.tex"'; mode "default"
+    bindsym c exec 'emacsclient -a "" -c "/home/pollakg/polybox/formularies/cpp/cpp/formulary.tex"'; mode "default"
+    bindsym g exec 'emacsclient -a "" -c "/home/pollakg/polybox/formularies/git/git/formulary.tex"'; mode "default"
+    bindsym m exec 'emacsclient -a "" -c "/home/pollakg/polybox/formularies/math/math/math_submodule/math.tex"'; mode "default"
+    bindsym p exec 'emacsclient -a "" -c "/home/pollakg/polybox/formularies/python/python/python_submodule/python.tex"'; mode "default"
+    bindsym f exec 'emacsclient -a "" -c "/home/pollakg/polybox/CSE/master/3rd_term/CTQF/formulary/formulary.tex"'; mode "default"
+    bindsym h exec 'emacsclient -a "" -c "/home/pollakg/polybox/formularies/hpc/formulary.tex"'; mode "default"
+    bindsym s exec 'emacsclient -a "" -c "/home/pollakg/polybox/CSE/master/3rd_term/Computationl Statistics/formulary/formulary.tex"'; mode "default"
+
+    bindsym $mod+Shift+q exec 'emacsclient -e "(kill-emacs)"'; mode "default"
+
+    bindsym Escape mode "default"
+    bindsym Return mode "default"
+}
+#============================================================================================
+#                             Shortcuts for Opening PDFs
+#============================================================================================
+mode "$pdf_launcher" {
+    bindsym l exec $pdf "/home/pollakg/polybox/formularies/LaTeX/LaTeX/formulary.pdf"; mode "default"
+    bindsym a exec $pdf "/home/pollakg/polybox/formularies/linux/linux/formulary.pdf"; mode "default"
+    bindsym c exec $pdf "/home/pollakg/polybox/formularies/cpp/cpp/formulary.pdf"; mode "default"
+    bindsym m exec $pdf "/home/pollakg/polybox/formularies/math/math/formulary.pdf"; mode "default"
+    bindsym g exec $pdf "/home/pollakg/polybox/formularies/git/git/formulary.pdf"; mode "default"
+    bindsym p exec $pdf "/home/pollakg/polybox/formularies/python/python/formulary.pdf"; mode "default"
+    bindsym h exec $pdf "/home/pollakg/polybox/formularies/hpc/formulary.pdf"; mode "default"
+
+    bindsym Escape mode "default"
+    bindsym Return mode "default"
+}
+
+#============================================================================================
+#                                  Umlauts
+#============================================================================================
+# bindsym $mod+a exec ~/.config/sway/tools/key "a" "ä"
+# bindsym $mod+Shift+a exec ~/.config/sway/tools/key "a" "Ä"
+# bindsym $mod+o exec ~/.config/sway/tools/key "o" "ö"
+# bindsym $mod+Shift+o exec ~/.config/sway/tools/key "o" "Ö"
+# bindsym $mod+u exec ~/.config/sway/tools/key "u" "ü"
+# bindsym $mod+Shift+u exec ~/.config/sway/tools/key "u" "Ü"
+# bindsym $mod+s exec ~/.config/sway/tools/key "s" "ß"
+
+#============================================================================================
+#                                  Audio and Brightness
+#============================================================================================
+
+#
+# Keybindings Audio and Brightness:
+#
+
+bindsym XF86MonBrightnessDown exec light set -5%
+bindsym XF86MonBrightnessUp exec brightnessctl set +5%
+# Volume with pactl and AUR helper script pulseaudio-ctl wiht config /home/pollakg/.config/pulseaudio-ctl/config
+# Lower volume
+bindsym --locked XF86AudioLowerVolume exec /usr/bin/pulseaudio-ctl down
+# Raise volume
+bindsym --locked XF86AudioRaiseVolume exec /usr/bin/pulseaudio-ctl up
+# Toggle mute
+bindsym --locked XF86AudioMute exec /usr/bin/pulseaudio-ctl mute
+
+# bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym f5 exec light -U 5
+bindsym f6 exec light -A 5
+# Media player controls
+# bindsym XF86AudioRaiseVolume exec pactl set-sink-volume $(pacmd list-sinks |awk '/* index:/{print $3}') +5%
+# bindsym XF86AudioLowerVolume exec pactl set-sink-volume $(pacmd list-sinks |awk '/* index:/{print $3}') -5%
+bindsym XF86AudioPlay exec playerctl play
+bindsym XF86AudioPause exec playerctl pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+
+
+include /etc/sway/config.d/*
