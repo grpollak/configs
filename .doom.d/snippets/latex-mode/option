@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# name: option
+# key: option
+# contributor: Georg R. Pollak
+# group: theorem
+# --
+\begin{optionsbox}\nospacing
+    \begin{option}${1:[${2:title}]}${3:\label{option:${2:$(create-label-for-theorem yas-text)}}}
+        $0
+    \end{option}
+\end{optionsbox}

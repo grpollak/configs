@@ -1,0 +1,27 @@
+# -*- mode: snippet -*-
+# key: tikzstandalone
+# name: tikzstandalone
+# contributor: Georg R. Pollak
+# group: tikz
+# --
+\documentclass[dvipsnames,table]{standalone}
+
+\input{`(projectile-project-root)`formularyETH/colors.cfg}
+\usepackage{`(projectile-project-root)`formularyETH/formularyETH_underline}
+\usepackage{`(projectile-project-root)`formularyETH/extern/formularyETH_scientific}
+\usepackage{`(projectile-project-root)`formularyETH/formularyETH_GeneralPackages}
+\usepackage{`(projectile-project-root)`formularyETH/extern/formularyETH_tikz}
+\usepackage{`(projectile-project-root)`formularyMacros}
+% ======================================================================
+% Tikz
+% ======================================================================
+\begin{document}
+\begin{tikzpicture}[
+    ${1:my style/.style={
+            draw,color=black,fill=blue
+        }
+    }
+]
+$0
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# name: lemma
+# key: lemma
+# contributor: Georg R. Pollak
+# group: theore
+# --
+\begin{lemmabox}\nospacing
+    \begin{lemma}${1:[${2:title}]}${3:\label{lemma:${2:$(create-label-for-theorem yas-text)}}}
+        $0
+    \end{lemma}
+\end{lemmabox}

@@ -3,6 +3,9 @@
 #key : minipage
 #contributor : 
 # --
-\begin{minipage}[${1:t}]{${2:0.45}\textwidth}
+\begin{minipage}{${2:0.48}\textwidth}
+
+\end{minipage}\hfil
+\begin{minipage}[${3:t}]{${4:0.48}\textwidth}
    $0
 \end{minipage}

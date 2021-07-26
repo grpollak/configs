@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+#name : conslist
+#key : conslist
+#groupe: lists
+#contributor : Georg R. Pollak
+# --
+\begin{conslist}
+\item $0
+\end{conslist}

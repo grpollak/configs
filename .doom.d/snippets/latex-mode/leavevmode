@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
-#name : leavevmode
-#key : leav
+#name : leavemode
+#key : lvm
 #contributor : Georg Pollak
 # --
-\leavevmode\\\
+\leavevmode\\\\$0

@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# contributor: Georg R. Pollak
+# name: function
+# key: fun
+# --
+${1:${2:fname} <-} function(${3:arg1, [arg2,...]}){
+    $0
+    ${4:return(${5:val})}
+}

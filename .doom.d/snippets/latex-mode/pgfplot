@@ -1,0 +1,66 @@
+# -*- mode: snippet -*-
+# key: pgfplot
+# name: pgfplot
+# contributor: Georg R. Pollak
+# --
+\documentclass[dvipsnames,table]{standalone}
+
+\input{`(projectile-project-root)`formularyETH/colors.cfg}
+\usepackage{`(projectile-project-root)`formularyETH/formularyETH_underline}
+\usepackage{`(projectile-project-root)`formularyETH/extern/formularyETH_scientific}
+\usepackage{`(projectile-project-root)`formularyETH/formularyETH_GeneralPackages}
+\usepackage{`(projectile-project-root)`formularyETH/extern/formularyETH_tikz}
+\usepackage{`(projectile-project-root)`formularyMacros}
+\usepackage{`(projectile-project-root)`ml_submodule/macros/nlu}
+\usepackage{`(projectile-project-root)`ml_submodule/macros/nn}
+\usepackage{`(projectile-project-root)`ml_submodule/macros/ml}
+\usepackage{`(projectile-project-root)`ml_submodule/macros/pac}
+% ======================================================================
+% PGFPlot
+% ======================================================================
+\begin{document}
+\begin{tikzpicture}[font=\Huge]
+
+  %\pgfplotsset{every axis/.append style={
+      % % xlabel={x label},
+      % ylabel={y label},
+      % % TICKS
+      % xtick style={draw=none},
+      % xtick pos=left,
+      % ticklabel style = {font=\huge},
+      % % GRI
+      % xmajorgrids,
+      % x grid style={white},
+      % ymajorgrids,
+      % y grid style={white},
+      % % AXIS
+      % x axis line style={draw=none},
+      % xtick={-4,0,4},
+      % xticklabels={$label1$,label2, label3},
+      % axis lines=middle,
+      % axis line style={-latex, very thick, fill opacity=0.7, draw opacity=0.2, gray},
+      % axis background/.style={fill=seabornplot},
+      % % axis lines=middle,
+      % legend pos=north east,
+      % legend style={
+      % fill=background_col, draw=black,
+      % font=\Huge,
+      % xshift=-5.5ex
+      % },
+    % }}
+
+  \begin{axis}[
+    name=mygraph,
+    % title={My Title},
+    % yticklabel style = {xshift=-1.3ex},
+    xmin=${1:-2},
+    xmax=${2:2},
+    ymin=${3:-1},
+    ymax=${4:1},
+    ]
+
+    \addplot [domain=$1:$2, samples=100,  thick, seaborngreen] {${0:x}};
+
+  \end{axis}
+\end{tikzpicture}
+\end{document}

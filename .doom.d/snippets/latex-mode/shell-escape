@@ -3,4 +3,4 @@
 #key : shelle
 #contributor : 
 # --
-%%% TeX-command-extra-options: "-shell-escape"
+TeX-command-extra-options: "-shell-escape"

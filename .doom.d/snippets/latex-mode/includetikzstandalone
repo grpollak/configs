@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: includetikzstandalone
+# key: includetikzstandalone
+# group: tikz
+# contributor Georg R. Pollak
+# --
+\centering{
+    \resizebox{\linewidth}{!}{\input{`(file-relative-name (projectile-project-root))`$0.tex}}
+}

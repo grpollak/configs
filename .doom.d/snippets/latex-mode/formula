@@ -1,9 +1,11 @@
 # -*- mode: snippet -*-
-#name : formula
-#key : formula
+# name: formula
+# key: formula
+# contributor: Georg R. Pollak
 # group: theorem
-#contributor : Georg Pollak
 # --
-\begin{formula}[${1:title}]
-    $0
-\end{formula}
+\begin{formulabox}\nospacing
+    \begin{formula}${1:[${2:title}]}${3:\label{formula:${2:$(create-label-for-theorem yas-text)}}}
+        $0
+    \end{formula}
+\end{formulabox}

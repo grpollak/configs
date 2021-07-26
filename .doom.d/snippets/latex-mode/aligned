@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# key: aligned
+# name: aligned
+# group: math
+# contributor Georg R. Pollak
+# --
+\begin{aligned}
+    $0
+\end{aligned}

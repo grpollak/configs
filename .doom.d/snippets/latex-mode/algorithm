@@ -1,16 +1,15 @@
 # -*- mode: snippet -*-
 # name: algorithm
-# key: algo
+# key: algorithm
+# auther: Georg R. Pollak
 # --
 \begin{algorithmbox}\nospacing
-    \begin{algorithm}${1:[${2:title}]}${3:\label{algorithm:${2:$(downcase(replace-regexp-in-string "[[:space:]]" "_" yas-text))}}}
+  \begin{algo}[${1:Title}]\leavevmode
     \begin{algorithmic}[1]
-    $0
-      \item[] \imp{Initalize}:
-      \For{$1,2\ldots,T$}
-        \State Something
-        \item[] \Comment{Comment}
-      \EndFor
+      ${2:\item[] \imp{Given}:}
+        ${3:\For{$t=1,\ldots,T$}}
+        \State
+        ${3:\EndFor}
     \end{algorithmic}
   \end{algo}
 \end{algorithmbox}

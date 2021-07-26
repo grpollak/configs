@@ -8,4 +8,4 @@
                        ("src" "#+BEGIN_SRC ${1:language}\n    $2          \n#+END_SRC\n$0" "Plain SRC Block" nil nil nil "/home/pollakg/.doom.d/snippets/org-mode/SRC" nil nil)))
 
 
-;;; Do not edit! File generated at Mon Nov 16 10:09:48 2020
+;;; Do not edit! File generated at Sun Jan 24 11:49:27 2021

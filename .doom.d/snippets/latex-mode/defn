@@ -1,10 +1,11 @@
 # -*- mode: snippet -*-
 # name: defn
 # key: defn
-# group: theorem
+# contributor: Georg R. Pollak
+# group: theore
 # --
 \begin{defnbox}\nospacing
-    \begin{defn}${1:[${2:title}]}${3:\label{defn:${2:$(downcase(replace-regexp-in-string "[[:space:]]" "_" yas-text))}}}
+    \begin{defn}${1:[${2:title}]}${3:\label{defn:${2:$(create-label-for-theorem yas-text)}}}
         $0
     \end{defn}
 \end{defnbox}

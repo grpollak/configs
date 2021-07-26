@@ -1,0 +1,5 @@
+# key: set
+# name: set
+# author: Georg R. Pollak
+# --
+\left\\{$1_{${2:i}}\right\\}_{${3:$2=1}}^{${2:$(upcase yas-text)}}$0

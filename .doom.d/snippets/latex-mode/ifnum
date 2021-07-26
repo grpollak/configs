@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# name: ifnum
+# key: ifnum
+# group: tikz
+# contributor: Georg R. Pollak
+# --
+\ifnum${1:\x}=${2:4}
+    $0
+\else
+
+\fi

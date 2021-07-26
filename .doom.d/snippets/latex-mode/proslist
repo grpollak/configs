@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+#name : proslist
+#key : proslist
+#groupe: lists
+#contributor : Georg R. Pollak
+# --
+\begin{proslist}
+\item $0
+\end{proslist}

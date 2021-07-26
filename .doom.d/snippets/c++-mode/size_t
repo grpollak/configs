@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: size_t
+# key: size
+# --
+size_t ${1:name} ${2: = ${3:value};}

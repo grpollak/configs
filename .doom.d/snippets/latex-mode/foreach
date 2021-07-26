@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: foreach
+# key: tforeach
+# group: tikz
+# --
+\foreach \\${1:i}${2: [count=\idx$1 ${3:from ${4:4}}]} in {${5:1,4,...,10 or a,...,e}}
+{
+    $0
+}

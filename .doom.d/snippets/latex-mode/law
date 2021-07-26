@@ -4,6 +4,18 @@
 # group: theorem
 #contributor : Georg Pollak
 # --
-\begin{law}[${1:title}]
-    $0
-\end{law}
+\begin{lawbox}\nospacing
+    \begin{law}${1:[${2:title}]}${3:\label{law:${2:$(downcase(
+            replace-regexp-in-string "$"  ""
+            (
+                 replace-regexp-in-string "[[:space:]]" "_"
+                 (
+                    replace-regexp-in-string "\\\\([\\\\]\\\\([^ ]*\\\\|[^\\\\]\\\\)\\\\|[\\\\$][^\\\\$]*[\\\\$]\\\\)" "" yas-text nil t
+                 )
+            )
+    )
+
+    )}}}
+        $0
+    \end{law}
+\end{lawbox}

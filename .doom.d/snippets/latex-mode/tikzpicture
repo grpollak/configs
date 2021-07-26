@@ -1,0 +1,14 @@
+# -*- mode: snippet -*-
+# name: tikzpicture
+# key: tikzpicture
+# group: tikz
+# author: Georg R. Pollak
+# --
+\begin{tikzpicture}[
+  ${1:font=${font=\fontsize{30pt}{0pt}\selectfont}},
+  ${3:my style/.style={
+    draw, color=black, fill=blue
+  }}
+]
+    $0
+\end{tikzpicture}

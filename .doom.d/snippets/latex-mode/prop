@@ -1,11 +1,21 @@
 # -*- mode: snippet -*-
 #name : property
-#key : prop
+#key : property
 # group: theorem
 #contributor : Georg Pollak
 # --
 \begin{propertybox}\nospacing
-    \begin{property}${1:[${2:title}]}${3:\label{property:${2:$(downcase(replace-regexp-in-string "[[:space:]]" "_" yas-text))}}}
+    \begin{property}${1:[${2:title}]}${3:\label{property:${2:$(downcase(
+            replace-regexp-in-string "$"  ""
+            (
+                 replace-regexp-in-string "[[:space:]]" "_"
+                 (
+                    replace-regexp-in-string "\\\\([\\\\]\\\\([^ ]*\\\\|[^\\\\]\\\\)\\\\|[\\\\$][^\\\\$]*[\\\\$]\\\\)" "" yas-text nil t
+                 )
+            )
+    )
+
+    )}}}
         $0
     \end{property}
 \end{propertybox}

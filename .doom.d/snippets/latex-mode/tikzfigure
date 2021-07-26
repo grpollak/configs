@@ -1,0 +1,15 @@
+# -*- mode: snippet -*-
+# name: tikzfigure
+# key: tikzfigure
+# author: Georg R. Pollak
+# group: tikz
+# --
+\vspace{-10pt}
+    \begin{figure}[H]
+    \centering
+    \resizebox{\linewidth}{!}{
+        \begin{tikzpicture}[sloped]
+            $0
+        \end{tikzpicture}
+        }
+\end{figure}

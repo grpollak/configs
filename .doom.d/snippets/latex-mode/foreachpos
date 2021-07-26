@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name:
+# group: tikz
+# key: foreachpos
+# contirbutor: Georg R. Pollak
+# --
+\foreach \${1:pos} in ${2:{(0,1),(0,2),(0,3)}}{
+    $0
+}
