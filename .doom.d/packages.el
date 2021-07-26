@@ -48,14 +48,39 @@
 ;(unpin! pinned-package another-pinned-package)
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
 ;(unpin! t)
-
+(setq initial-buffer-choice "~/org/uni.org")
+(setq lsp-clients-clangd-args '("-j=3"
+                                "--background-index"
+                                "--clang-tidy"
+                                "--completion-style=detailed"
+                                "--header-insertion=iwyu"))
+(after! lsp-clangd (set-lsp-priority! 'clangd 2))
 (package! vue-mode)
 (package! try)
 (package! ayu-theme)
 (package! color-theme-sanityinc-tomorrow)
+(package! base16-theme)
+;; Not working
+;; (package! leetcode-emacs
+;;    :recipe (:host github :repo "ginqi7/leetcode-emacs"))
 ;; Python
+(package! leetcode)
 (package! sphinx-doc)
 ;; LaTeX
 (package! px)
 (package! elpy)
 (package! helm-descbinds)
+(package! rainbow-mode) ;; display rgb colors
+(package! matlab-mode)
+;; Diffing
+(package! ztree)
+;; C++ -> assembly
+(package! rmsbolt)
+;; doxygen creation
+(package! gendoxy
+  :recipe (:host github :repo "mp81ss/gendoxy"))
+;; (load "gendoxy.el")
+;; R-markdown
+(package! outline)
+(package! polymode)
+(package! poly-R)
