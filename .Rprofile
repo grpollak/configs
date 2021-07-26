@@ -4,4 +4,5 @@
 ## rm(r)
 ## from the AER book by Zeileis and Kleiber
 options(timeout = 400)
-options(prompt = "R> ", digits = 4, show.signif.stars = FALSE)
+## options(prompt = "R> ", digits = 4, show.signif.stars = FALSE)
+options(browser = "firefox")
