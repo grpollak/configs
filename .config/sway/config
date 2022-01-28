@@ -6,8 +6,8 @@
 #============================================================================================
     #                              Key Bindings 
 #============================================================================================
-# Logo key. Use Mod1 for Alt.
-# focus_follows_mouse no
+# logo key. use mod1 for alt.
+focus_follows_mouse yes
 # GOAL => remap key also to bindcode 127 Mod4
 set $mod Mod4
 #                                Inputs German Accents
@@ -28,11 +28,53 @@ set $right l
 #============================================================================================
 #                                  Screens and Output config
 #============================================================================================
+#
 # You can get the names of your outputs by running: swaymsg -t get_outputs
-#output eDP-1 Lenovo Screen 2560x1440
-output eDP-1 res 2560x1440 pos 2560 0 scale 2
+# output eDP-1 Lenovo Screen 2560x1440
+#  transform 270
+output DP-2 res 1920x1080 pos 0 0 scale 1.3
+output HDMI-A-1 res 2560x1080 scale 1
+output eDP-1 res 2560x1440 scale 2
+#output eDP-1  pos 0 0 res 2560x1440 scale 2
 #resolution Dell Screen 2560x1080
-output HDMI-A-1 pos 0 0 res 2560x1080 scale 1
+#transform 270
+#                               Brightness
+#============================================================================================
+
+set $Brightness 1: Left Screen 2: Center Screen 3: Right Screen
+mode "$Brightness" {
+    bindsym 1 mode "Screen Left"
+    bindsym 2 mode "Screen Center"
+    bindsym 3 mode "Screen Right"
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+Shift+b mode "$Brightness"
+mode "Screen Left" {
+    bindsym k exec ddcutil --bus 6 setvcp 10 + 10
+    bindsym j exec ddcutil --bus 6 setvcp 10 - 10    # return to default mode
+    bindsym Escape mode "$Brightness"
+    bindsym Return mode "default"
+}
+mode "Screen Center" {
+    bindsym k exec ddcutil --bus 2 setvcp 10 + 10
+    bindsym j exec ddcutil --bus 2 setvcp 10 - 10    # return to default mode
+    bindsym Escape mode "default"
+    bindsym Return mode "default"
+}
+# XF86MonBrightnessDown
+mode "Screen Right" {
+    bindsym k exec brightnessctl set 5%-
+    bindsym j exec brightnessctl set +5%
+    bindsym Escape mode "default"
+    bindsym Return mode "default"
+}
+#                               Locking the screen with waylock
+#============================================================================================
+
+set $lockman exec bash ~/.config/sway/lockman.sh
+bindsym $mod+ctrl+l exec $lockman
+
 workspace 1 output HDMI-A-1
 workspace 8 output eDP-1
 
@@ -42,7 +84,8 @@ output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 #============================================================================================
 #                                     Termianl
 #============================================================================================
-set $term env KITTY_ENABLE_WAYLAND=1 kitty
+# set $term env KITTY_ENABLE_WAYLAND=0 kitty
+set $term uxterm
 #                                      Screenshots with Slurp
 #============================================================================================
 bindsym --release Print exec grim -g "$(slurp)" - | wl-copy
@@ -386,15 +429,12 @@ mode "$pdf_launcher" {
 # bindsym $mod+s exec ~/.config/sway/tools/key "s" "ß"
 
 #============================================================================================
-#                                  Audio and Brightness
+#                                  Audio
 #============================================================================================
 
 #
-# Keybindings Audio and Brightness:
+# Keybindings Audio:
 #
-
-bindsym XF86MonBrightnessDown exec light set -5%
-bindsym XF86MonBrightnessUp exec brightnessctl set +5%
 # Volume with pactl and AUR helper script pulseaudio-ctl wiht config /home/pollakg/.config/pulseaudio-ctl/config
 # Lower volume
 bindsym --locked XF86AudioLowerVolume exec /usr/bin/pulseaudio-ctl down
