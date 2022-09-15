@@ -3,4 +3,4 @@
 #key : optcc
 #contributor : Georg Pollak
 # --
-|\optc{\texttt{$1}}|$0
+|\texttt{\optc{$1}}|$0

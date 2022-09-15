@@ -1,0 +1,16 @@
+# -*- mode: snippet -*-
+# name: argp.add
+# key: argp.add
+# group: argparser
+# contributor: Georg R. Pollak <pollakgeorg@gmail.com>
+# --
+parser.add_argument(
+    "-${1:short}",
+    "--${2:long}",
+    help="${3:help message}",${4:
+    type=${5:type},}${6:
+    default=${7:","},}
+    required=${9:False},${10:
+    choices=[${11:Choice1, Choice2, ...}]}
+)
+$0

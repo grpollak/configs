@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: main
+# key: main
+# author: Georg R. Pollak
+# --
+int main(${1:int argc, char *argv[]})
+{
+    $0
+}

@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# name: function
+# key: function
+# contributor: Georg R. Pollak
+# group: theorem
+# --
+\begin{functionbox}\nospacing
+    \begin{function}${1:[${2:title}]}${3:\label{function:${2:$(create-label-for-theorem yas-text)}}}
+        $0
+    \end{function}
+\end{functionbox}

@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: for
+# key: fors
+# author: Georg R. Pollak
+# --
+for(size_t ${1:i}){
+    $0
+}

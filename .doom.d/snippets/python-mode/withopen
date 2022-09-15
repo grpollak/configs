@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: with open
+# key: withopen
+# group: file
+# contributor: Georg R. Pollak <pollakgeorg@gmail.com>
+# --
+with open(${1:filepath}) as fh:
+     $0

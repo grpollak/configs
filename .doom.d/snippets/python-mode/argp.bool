@@ -1,0 +1,13 @@
+# -*- mode: snippet -*-
+# name: argp.bool
+# key: argp.bool
+# group: argparser
+# contributor: Georg R. Pollak <pollakgeorg@gmail.com>
+# --
+parser.add_argument(
+    "-${1:short}"
+    "--${2:long}",
+    help="${3:help message}",
+    ${4:required=${5:False}},
+    action="store_${6:true/false}"
+)

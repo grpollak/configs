@@ -1,9 +1,0 @@
-# -*- mode: snippet -*-
-#name : warningbox
-#key : wbox
-#group: box
-#contributor : Georg Pollak
-# --
-\begin{warningbox}${1:[${2:Options}]}${3:{${4:Title}}}
-	$0	
-\end{warningbox}

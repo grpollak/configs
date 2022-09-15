@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: printf_flush
+# key: printff
+# group: korali
+# author: Georg R. Pollak
+# --
+printf("$0"); fflush(stdout);

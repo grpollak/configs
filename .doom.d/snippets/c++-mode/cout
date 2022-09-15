@@ -1,7 +1,5 @@
 # -*- mode: snippet -*-
-#name : cout
-#key : cout
-#contributor : 
+# name: cout
+# key: cout
 # --
-std::cout << $1 << std::endl;
-$0
+std::cout << "$1: " << $1 << std::endl;

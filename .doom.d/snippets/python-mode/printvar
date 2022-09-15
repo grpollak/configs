@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+#name : printvar
+#key : pvar
+#contributor : Georg R. Pollak
+# --
+print(f"$1: {$1}\n")$0

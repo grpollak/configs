@@ -7,9 +7,6 @@
                        ("wtil" "\\widetilde{$1}$0" "widetilde" nil
                         ("math")
                         nil "/home/pollakg/.doom.d/snippets/latex-mode/widetilde" nil nil)
-                       ("wbox" "\\begin{warningbox}${1:[${2:Options}]}${3:{${4:Title}}}\n	$0	\n\\end{warningbox}" "warningbox" nil
-                        ("box")
-                        nil "/home/pollakg/.doom.d/snippets/latex-mode/warningbox" nil nil)
                        ("veci" "\\\\vec{$1}^{-1}$0" "vector_inverse" nil
                         ("math")
                         nil "/home/pollakg/.doom.d/snippets/latex-mode/vector_inverse" nil nil)
@@ -18,18 +15,29 @@
                         nil "/home/pollakg/.doom.d/snippets/latex-mode/vector" nil nil)
                        ("underb" "\\underbrace{$1}_{$2}$0" "underbrace" nil nil nil "/home/pollakg/.doom.d/snippets/latex-mode/underbrace" nil nil)
                        ("uml" "\\begin{figure}[H]	\n  \\centering\n  \\resizebox{${1:$2{:\\linewidth}}}{!}{\\tikzset{font=\\Huge}\\input{uml/${3:path}.tex}}\n\\end{figure}\n$0" "uml" nil nil nil "/home/pollakg/.doom.d/snippets/latex-mode/uml" nil nil)
+                       ("type" "\\begin{typebox}\\nospacing\n    \\begin{type}${1:[${2:title}]}${3:\\label{type:${2:$(create-label-for-theorem yas-text)}}}\n        $0\n    \\end{type}\n\\end{typebox}\n" "type" nil
+                        ("theore")
+                        nil "/home/pollakg/.doom.d/snippets/latex-mode/type" nil nil)
                        ("todo" "\\todo[${1:inline}]{$2}$0" "todo" nil nil nil "/home/pollakg/.doom.d/snippets/latex-mode/todo" nil nil)
                        ("tnode" "\\node[draw, ${1:shape}, fill=${2:color}, ${3:right/left/below/above}${4:=${5:5pt} of ${6:node}] ${7:(label)} {${0:text}};" "tnode" nil
                         ("tikz")
                         nil "/home/pollakg/.doom.d/snippets/latex-mode/tnode" nil nil)
                        ("tmatrix" "\\begin{tikzpicture}[baseline=-0.5ex,\n            every left delimiter/.style={xshift=.75em},\n            every right delimiter/.style={xshift=-.75em}\n            ]\n    \\matrix (M) [\n    inner sep=1pt, nodes={inner sep=.2em}, \n    column sep=3pt, row sep=0.7pt,\n    matrix of math nodes, nodes in empty cells, right delimiter={]},left delimiter={[}]\n    {\n    1 & & 									&  \\\\\n        & &\\optlambda					 		&  \\\\\n        & & 									&  \\\\\n        & &           						&1 \\\\\n    };\n    \\draw[loosely dotted] (M-1-1)-- (M-4-4);\n    \\node [xshift=0.5em] at  (M-2-4.east) {$\\optidxk$};\n    \\node [yshift=0.8em] at  (M-1-3.north) {$\\optidxi$}; \n\\end{tikzpicture}\n" "tmatrix" nil nil nil "/home/pollakg/.doom.d/snippets/latex-mode/tmatrix" nil nil)
-                       ("tikzstandalone" "\\documentclass[dvipsnames,table]{standalone}\n\n\\input{`(projectile-project-root)`formularyETH/colors.cfg}\n\\usepackage{`(projectile-project-root)`formularyETH/formularyETH_underline}\n\\usepackage{`(projectile-project-root)`formularyETH/extern/formularyETH_scientific}\n\\usepackage{`(projectile-project-root)`formularyETH/formularyETH_GeneralPackages}\n\\usepackage{`(projectile-project-root)`formularyETH/extern/formularyETH_tikz}\n\\usepackage{`(projectile-project-root)`formularyMacros}\n\\usepackage{`(projectile-project-root)`ml_submodule/macros/nlu}\n\\usepackage{`(projectile-project-root)`ml_submodule/macros/nn}\n\\usepackage{`(projectile-project-root)`ml_submodule/macros/ml}\n\\usepackage{`(projectile-project-root)`ml_submodule/macros/pac}\n% ======================================================================\n% Tikz\n% ======================================================================\n\\begin{document}\n\\begin{tikzpicture}[\n    ${1:my style/.style={\n            draw,color=black,fill=blue\n        }\n    }\n]\n$0\n\\end{tikzpicture}\n\\end{document}\n" "tikzstandalone" nil
+                       ("tikzstandalone" "\\documentclass[dvipsnames,table]{standalone}\n\n\\input{`(projectile-project-root)`formularyETH/colors.cfg}\n\\usepackage{`(projectile-project-root)`formularyETH/formularyETH_underline}\n\\usepackage{`(projectile-project-root)`formularyETH/extern/formularyETH_scientific}\n\\usepackage{`(projectile-project-root)`formularyETH/formularyETH_GeneralPackages}\n\\usepackage{`(projectile-project-root)`formularyETH/extern/formularyETH_tikz}\n\\usepackage{`(projectile-project-root)`formularyMacros}\n% ======================================================================\n% Tikz\n% ======================================================================\n\\begin{document}\n\\begin{tikzpicture}[\n    ${1:my style/.style={\n            draw,color=black,fill=blue\n        }\n    }\n]\n$0\n\\end{tikzpicture}\n\\end{document}\n" "tikzstandalone" nil
                         ("tikz")
                         nil "/home/pollakg/.doom.d/snippets/latex-mode/tikzstandalone" nil nil)
-                       ("tikzpicture" "\\vspace{-10pt}\n    \\begin{figure}[H]\n    \\centering\n    \\resizebox{\\linewidth}{!}{\n        \\begin{tikzpicture}[sloped]\n            $0\n        \\end{tikzpicture}\n        }\n\\end{figure}" "tikzpicture" nil nil nil "/home/pollakg/.doom.d/snippets/latex-mode/tikzpicture" nil nil)
+                       ("tikzpicture" "\\begin{tikzpicture}[\n  ${1:font=${font=\\fontsize{30pt}{0pt}\\selectfont}},\n  ${3:my style/.style={\n    draw, color=black, fill=blue\n  }}\n]\n    $0\n\\end{tikzpicture}" "tikzpicture" nil
+                        ("tikz")
+                        nil "/home/pollakg/.doom.d/snippets/latex-mode/tikzpicture" nil nil)
+                       ("tikzfigure" "\\vspace{-10pt}\n    \\begin{figure}[H]\n    \\centering\n    \\resizebox{\\linewidth}{!}{\n        \\begin{tikzpicture}[sloped]\n            $0\n        \\end{tikzpicture}\n        }\n\\end{figure}" "tikzfigure" nil
+                        ("tikz")
+                        nil "/home/pollakg/.doom.d/snippets/latex-mode/tikzfigure" nil nil)
                        ("thb" "\\begin{theorembox}\n	$1 \n\\end{theorembox}$0\n" "theorembox" nil
                         ("box")
                         nil "/home/pollakg/.doom.d/snippets/latex-mode/theorembox" nil nil)
+                       ("theorem" "\\begin{theorembox}\\nospacing\n  \\begin{theorem}${1:[${2:title}]}${3:\\label{theorem:${2:$(downcase(replace-regexp-in-string \"[[:space:]]\" \"_\" yas-text))}}}\n	$4 \n  \\end{theorem}\n\\end{theorembox}$0" "theorem" nil
+                        ("theorem")
+                        nil "/home/pollakg/.doom.d/snippets/latex-mode/theorem" nil nil)
                        ("texttt" "\\texttt{$1}$0" "texttt" nil
                         ("coding")
                         nil "/home/pollakg/.doom.d/snippets/latex-mode/texttt" nil nil)
@@ -59,7 +67,10 @@
                        ("ssecs" "\\subsection*{${1:name}}\n    ${2:\\label{subsec:${1:$(downcase(replace-regexp-in-string \"[[:space:]]\" \"_\" yas-text))}}}\n    ${3:\\stepcounter{subsection}}\n    $0" "subsections" nil nil nil "/home/pollakg/.doom.d/snippets/latex-mode/subsections" nil nil)
                        ("ssec" "\\subsection{${1:name}}${2:\\label{subsec:${1:$(downcase(replace-regexp-in-string \"[[:space:]]\" \"_\" yas-text))}}}\n$0" "subsection" nil nil nil "/home/pollakg/.doom.d/snippets/latex-mode/subsection" nil nil)
                        ("submod" "\\input{$1_submodule/src/$2}$0" "submodule" nil nil nil "/home/pollakg/.doom.d/snippets/latex-mode/submodule" nil nil)
-                       ("shelle" "%%% TeX-command-extra-options: \"-shell-escape\"" "shell-escape" nil nil nil "/home/pollakg/.doom.d/snippets/latex-mode/shell-escape" nil nil)
+                       ("styleb" "\\begin{stylebox}${1:[${2:title}]}\\nospacing\n$0\n\\end{stylebox}" "stylebox" nil
+                        ("theorem")
+                        nil "/home/pollakg/.doom.d/snippets/latex-mode/stylebox" nil nil)
+                       ("shelle" "TeX-command-extra-options: \"-shell-escape\"" "shell-escape" nil nil nil "/home/pollakg/.doom.d/snippets/latex-mode/shell-escape" nil nil)
                        ("set" "\\left\\\\{$1_{${2:i}}\\right\\\\}_{${3:$2=1}}^{${2:$(upcase yas-text)}}$0" "set" nil nil nil "/home/pollakg/.doom.d/snippets/latex-mode/set" nil nil)
                        ("seq" "\\left($1_{${2:i}}\\right)_{${3:$2=1}}^{${2:$(upcase yas-text)}}$0" "seq" nil nil nil "/home/pollakg/.doom.d/snippets/latex-mode/seq" nil nil)
                        ("secb" "\\begin{sectionbox}${1:[${2:Title}]}\\nospacing\n	$3	\n\\end{sectionbox}$0" "sectionbox" nil
@@ -132,8 +143,11 @@
                        ("optb" "\\begin{optionsbox}${1:[${2:Options}]}${3:{${4:Title}}}\n	$0	\n\\end{optionsbox}" "optionsbox" nil
                         ("box")
                         nil "/home/pollakg/.doom.d/snippets/latex-mode/optionsbox" nil nil)
+                       ("option" "\\begin{optionsbox}\\nospacing\n    \\begin{option}${1:[${2:title}]}${3:\\label{option:${2:$(create-label-for-theorem yas-text)}}}\n        $0\n    \\end{option}\n\\end{optionsbox}\n" "option" nil
+                        ("theorem")
+                        nil "/home/pollakg/.doom.d/snippets/latex-mode/option" nil nil)
                        ("optct" "\\optc{\\texttt{$1}}$0\n" "optct" nil nil nil "/home/pollakg/.doom.d/snippets/latex-mode/optct" nil nil)
-                       ("optcc" "|\\optc{\\texttt{$1}}|$0" "optcc" nil nil nil "/home/pollakg/.doom.d/snippets/latex-mode/optcc" nil nil)
+                       ("optcc" "|\\texttt{\\optc{$1}}|$0" "optcc" nil nil nil "/home/pollakg/.doom.d/snippets/latex-mode/optcc" nil nil)
                        ("optcb" "|\\optcll|$1|\\optclr$0" "optcb" nil
                         ("coding")
                         nil "/home/pollakg/.doom.d/snippets/latex-mode/optcb" nil nil)
@@ -160,7 +174,7 @@
                        ("min" "\\\\mintinline{${1:language}}{$2}$0\n" "mintinline" nil
                         ("coding")
                         nil "/home/pollakg/.doom.d/snippets/latex-mode/mintinline" nil nil)
-                       ("minipage" "\\begin{minipage}[${1:t}]{${2:0.45}\\textwidth}\n   $0\n\\end{minipage}\n" "minipage" nil nil nil "/home/pollakg/.doom.d/snippets/latex-mode/minipage" nil nil)
+                       ("minipage" "\\begin{minipage}{${2:0.48}\\textwidth}\n\n\\end{minipage}\\hfil\n\\begin{minipage}[${3:t}]{${4:0.48}\\textwidth}\n   $0\n\\end{minipage}" "minipage" nil nil nil "/home/pollakg/.doom.d/snippets/latex-mode/minipage" nil nil)
                        ("mbox" "\\begin{methodbox}${1:[${2:Options}]}${3:{${4:Title}}}\n	$0	\n\\end{methodbox}" "methodbox" nil
                         ("box")
                         nil "/home/pollakg/.doom.d/snippets/latex-mode/methodbox" nil nil)
@@ -171,8 +185,10 @@
                        ("lispin" "\\lispinline{$1}$0" "lispinline" nil
                         ("coding")
                         nil "/home/pollakg/.doom.d/snippets/latex-mode/lispinline" nil nil)
-                       ("leav" "\\leavevmode\\\\\\" "leavevmode" nil nil nil "/home/pollakg/.doom.d/snippets/latex-mode/leavevmode" nil nil)
-                       ("lvm" "\\leavevmode\\\\\\\\$0" "leavemode" nil nil nil "/home/pollakg/.doom.d/snippets/latex-mode/leavemode" nil nil)
+                       ("lemma" "\\begin{lemmabox}\\nospacing\n    \\begin{lemma}${1:[${2:title}]}${3:\\label{lemma:${2:$(create-label-for-theorem yas-text)}}}\n        $0\n    \\end{lemma}\n\\end{lemmabox}\n" "lemma" nil
+                        ("theorem")
+                        nil "/home/pollakg/.doom.d/snippets/latex-mode/lemma" nil nil)
+                       ("lvm" "\\leavevmode\\\\\\\\$0" "leavemode" nil nil nil "/home/pollakg/.doom.d/snippets/latex-mode/leavevmode" nil nil)
                        ("lcb" "\\left\\\\{$0\\right\\\\}" "lcb" nil nil nil "/home/pollakg/.doom.d/snippets/latex-mode/lcb" nil nil)
                        ("lawb" "\\begin{lawbox}\\nospacing\n   $0\n\\end{lawbox}" "lawbox" nil
                         ("box")
@@ -205,16 +221,16 @@
                        ("ifnum" "\\ifnum${1:\\x}=${2:4}\n    $0\n\\else\n\n\\fi" "ifnum" nil
                         ("tikz")
                         nil "/home/pollakg/.doom.d/snippets/latex-mode/ifnum" nil nil)
+                       ("function" "\\begin{functionbox}\\nospacing\n    \\begin{function}${1:[${2:title}]}${3:\\label{function:${2:$(create-label-for-theorem yas-text)}}}\n        $0\n    \\end{function}\n\\end{functionbox}" "function" nil
+                        ("theorem")
+                        nil "/home/pollakg/.doom.d/snippets/latex-mode/function" nil nil)
                        ("frame" "\\begin{frame}${1:{${2:Title}}}\n    $0\n\\end{frame}" "frame" nil
                         ("beamer")
                         nil "/home/pollakg/.doom.d/snippets/latex-mode/frame" nil nil)
                        ("frac" "\\frac{$1}{$2}$0" "frac" nil
                         ("math")
                         nil "/home/pollakg/.doom.d/snippets/latex-mode/frac" nil nil)
-                       ("formulab" "\\begin{formulabox}\\nospacing\n   $0\n\\end{formulabox}" "formulabox" nil
-                        ("box")
-                        nil "/home/pollakg/.doom.d/snippets/latex-mode/formulabox" nil nil)
-                       ("formula" "\\begin{formula}[${1:title}]\n    $0\n\\end{formula}" "formula" nil
+                       ("formula" "\\begin{formulabox}\\nospacing\n    \\begin{formula}${1:[${2:title}]}${3:\\label{formula:${2:$(create-label-for-theorem yas-text)}}}\n        $0\n    \\end{formula}\n\\end{formulabox}" "formula" nil
                         ("theorem")
                         nil "/home/pollakg/.doom.d/snippets/latex-mode/formula" nil nil)
                        ("foreachpos" "\\foreach \\${1:pos} in ${2:{(0,1),(0,2),(0,3)}}{\n    $0\n}" "" nil
@@ -259,7 +275,7 @@
                         ("theorem")
                         nil "/home/pollakg/.doom.d/snippets/latex-mode/defnc" nil nil)
                        ("defn" "\\begin{defnbox}\\nospacing\n    \\begin{defn}${1:[${2:title}]}${3:\\label{defn:${2:$(create-label-for-theorem yas-text)}}}\n        $0\n    \\end{defn}\n\\end{defnbox}\n" "defn" nil
-                        ("theore")
+                        ("theorem")
                         nil "/home/pollakg/.doom.d/snippets/latex-mode/defn" nil nil)
                        ("defnb" "\\begin{defnbox}\\nospacing\n   $0\n\\end{defnbox}" "defnb" nil
                         ("box")
@@ -312,13 +328,16 @@
                        ("bashin" "\\bashinline{$1}$0" "bashinline" nil
                         ("coding")
                         nil "/home/pollakg/.doom.d/snippets/latex-mode/bashinline" nil nil)
-                       ("abox" "\\begin{attributebox}${1:[${2:Options}]}${3:{${4:Title}}}\n	$0	\n\\end{attributebox}\n" "attributebox" nil
+                       ("atrbox" "\\begin{attributebox}${1:[${2:Options}]}${3:{${4:Title}}}\n	$0	\n\\end{attributebox}\n" "attributebox" nil
                         ("box")
                         nil "/home/pollakg/.doom.d/snippets/latex-mode/attributebox" nil nil)
+                       ("attentionb" "\\begin{attentionbox}${1:{${2:title}}}\\nospacing\n$0\n\\end{attentionbox}\n" "attentionbox" nil
+                        ("theorem")
+                        nil "/home/pollakg/.doom.d/snippets/latex-mode/attentionbox" nil nil)
                        ("alphalistnosep" "\\begin{alphalistnosep}\n\\item $1\n\\end{alphalistnosep}$0\n" "alphalistnosep" nil nil nil "/home/pollakg/.doom.d/snippets/latex-mode/alphalistnosep" nil nil)
                        ("alphalist" "\\begin{alphalist}\n\\item $1\n\\end{alphalist}$0" "alphalist" nil nil nil "/home/pollakg/.doom.d/snippets/latex-mode/alphalist" nil nil)
                        ("aligns" "\\begin{align*}\n  $1\n\\end{align*}$0" "aligns" nil nil nil "/home/pollakg/.doom.d/snippets/latex-mode/aligns" nil nil)
-                       ("aligned" "\\begin{aligned}\n    $0\n\\end{aligned}\n" "aligned" nil
+                       ("aligned" "\\begin{aligned$1}\n    $0\n\\end{aligned}\n" "aligned" nil
                         ("math")
                         nil "/home/pollakg/.doom.d/snippets/latex-mode/aligned" nil nil)
                        ("alignats" "\\begin{alignat*}{$1}\n   $2\n\\end{alignat*}$0" "alignats" nil
@@ -347,12 +366,4 @@
                         nil "/home/pollakg/.doom.d/snippets/latex-mode/$" nil nil)))
 
 
-;;; Snippet definitions:
-;;;
-(yas-define-snippets 'latex-mode
-                     '(("theorem" "\\begin{theorembox}\\nospacing\n  \\begin{theorem}${1:[${2:title}]}${3:\\label{theorem:${2:$(downcase(replace-regexp-in-string \"[[:space:]]\" \"_\" yas-text))}}}\n	$4 \n  \\end{theorem}\n\\end{theorembox}$0" "theorem" nil
-                        ("theorem")
-                        nil "/home/pollakg/.doom.d/snippets/latex-mode/theorem/theorem" nil nil)))
-
-
-;;; Do not edit! File generated at Sun Jan 24 11:49:27 2021
+;;; Do not edit! File generated at Tue May 17 09:43:05 2022

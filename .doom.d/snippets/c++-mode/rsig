@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: rsig
+# key: rsig
+# contributor: Georg R. Pollak
+#
+# --
+#include<csignal>
+std::raise(SIGINT);$0

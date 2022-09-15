@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: argparser
+# key: argparser
+# group: argparser
+# contributor: Georg R. Pollak <pollakgeorg@gmail.com>
+# --
+import argparse
+parser = argparse.ArgumentParser(${1:formatter_class=argparse.ArgumentDefaultsHelpFormatter})
+$0
+args = parser.parse_args()

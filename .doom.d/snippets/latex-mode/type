@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# name: type
+# key: type
+# contributor: Georg R. Pollak
+# group: theore
+# --
+\begin{typebox}\nospacing
+    \begin{type}${1:[${2:title}]}${3:\label{type:${2:$(create-label-for-theorem yas-text)}}}
+        $0
+    \end{type}
+\end{typebox}

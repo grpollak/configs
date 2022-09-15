@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: ifdef
+# key: ifdef
+# author: Georg R. Pollak
+# --
+\#ifdef $1
+  $0
+\#endif

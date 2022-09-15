@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: attentionbox
+# key: attentionb
+# contributor: Georg R. Pollak <pollakgeorg@gmail.com>
+# group: theorem
+# --
+\begin{attentionbox}${1:{${2:title}}}\nospacing
+$0
+\end{attentionbox}

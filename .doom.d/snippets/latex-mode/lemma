@@ -2,7 +2,7 @@
 # name: lemma
 # key: lemma
 # contributor: Georg R. Pollak
-# group: theore
+# group: theorem
 # --
 \begin{lemmabox}\nospacing
     \begin{lemma}${1:[${2:title}]}${3:\label{lemma:${2:$(create-label-for-theorem yas-text)}}}

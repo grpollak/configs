@@ -1,8 +1,8 @@
 # -*- mode: snippet -*-
 #name : Plain SRC Block
 #key : src
-#contributor : 
+#contributor : Georg R. Pollak
 # --
 #+begin_src $1
-`%`$0
+$0
 #+end_src

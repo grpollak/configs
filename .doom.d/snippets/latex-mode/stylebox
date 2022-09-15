@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: stylebox
+# key: styleb
+# contributor: Georg R. Pollak <pollakgeorg@gmail.com>
+# group: theorem
+# --
+\begin{stylebox}${1:[${2:title}]}\nospacing
+$0
+\end{stylebox}
