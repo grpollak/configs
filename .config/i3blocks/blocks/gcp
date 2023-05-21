@@ -1,0 +1,10 @@
+#!/bin/bash
+
+MACHINE="dwp-georg-a100-spot-tf"
+STATUS=$(gcloud compute instances describe dwp-georg-a100-spot-tf --format='value(status)')
+
+if [[ "${STATUS}" ]]; then
+  echo "${MACHINE}: ${STATUS}"
+  echo "${MACHINE}: ${STATUS}"
+  echo ""
+fi

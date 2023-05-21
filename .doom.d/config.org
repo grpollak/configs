@@ -57,6 +57,21 @@ they are implemented.
 (setq initial-major-mode 'org-mode)
 #+END_SRC
 
+** Diffing the init.el with the doom example
+#+BEGIN_SRC emacs-lisp
+ (defun doom/ediff-init-and-example ()
+  "ediff the current `init.el' with the example in doom-emacs-dir"
+  (interactive)
+  (ediff-files (concat doom-private-dir "init.el")
+               (concat doom-emacs-dir "init.example.el")))
+
+(define-key! help-map
+  "di"   #'doom/ediff-init-and-example
+)
+#+END_SRC
+
+#+RESULTS:
+
 ** Set indent width
 #+begin_src emacs-lisp
 (setq-default tab-width 4)
@@ -77,12 +92,18 @@ they are implemented.
 )
 #+END_SRC
 
+** Buffers TODO
+Switch lead b b to switch-buffer-project and not buffer in gneral
+#+BEGIN_SRC emacs-lisp
+(map! :leader
+      :desc "New journal entry"
+      "b b" #'projectile-switch-to-buffer)
+#+END_SRC
 
 * Evil
 #+BEGIN_SRC emacs-lisp
-(after! evil-snipe (evil-snipe-mode -1))
-;; (evil-define-key '(normal motion) evil-snipe-local-mode-map "z z" 'evil-snipe-s)
-;; (evil-define-key '(normal motion) evil-snipe-local-mode-map "z Z" 'evil-snipe-S)
+;; (after! evil-snipe (evil-snipe-mode -1))
+(remove-hook 'doom-first-input-hook #'evil-snipe-mode)
 #+END_SRC
 
 #+RESULTS:
@@ -164,15 +185,24 @@ https://sam217pa.github.io/2016/09/13/from-helm-to-ivy/
    #+RESULTS:
    : #<font-spec nil nil sans nil nil nil nil nil 13 nil nil nil nil>
 
-* Line Number
+* Line Number and Which Function
 This determines the style of line numbers in effect. If set to `nil', line
 numbers are disabled. For relative line numbers, set this to `relative'.
+** Relative Line Numbers
 #+BEGIN_SRC emacs-lisp
-(setq display-line-numbers-type 'rel)
+(setq display-line-numbers-type 'relative)
+(global-display-line-numbers-mode)
 #+END_SRC
-
+** Which Function Mode
+#+BEGIN_SRC emacs-lisp
+(use-package which-func
+  :commands which-function-mode
+  :demand
+  :config (which-function-mode))
+#+END_SRC
 #+RESULTS:
-: rel
+: t
+
 * C/C++/Cpp
 ** Compiler Explorer - RMSbolt
 ** LSP-mode with clangd
@@ -193,6 +223,8 @@ numbers are disabled. For relative line numbers, set this to `relative'.
                       :major-modes '(c-mode c++-mode)
                       :remote? t
                       :server-id 'clangd-remote))))
+(add-to-list 'auto-mode-alist '("\\.hpp.base\\'" . cpp-mode))
+(add-to-list 'auto-mode-alist '("\\.cpp.base\\'" . cpp-mode))
 #+END_SRC
 
 #+RESULTS:
@@ -283,9 +315,18 @@ Helper function that can be used inside dir-locals.el to query master file autom
     :config
     (setq-default TeX-master "formulary"))
 #+END_SRC
+*** Automatic nomenclature command execution
+#+BEGIN_SRC emacs-lisp :results none
+;; nomenclature for latex
+(eval-after-load "tex"
+  '(add-to-list 'TeX-command-list
+                '("Nomenclature" "makeindex %s.nlo -s nomencl.ist -o %s.nls"
+                  (lambda (name command file)
+                    (TeX-run-compile name command file)
+                    (TeX-process-set-variable file 'TeX-command-next TeX-command-default))
+                  nil t :help "Create nomenclature file")))
+#+END_SRC
 
-#+RESULTS:
-: t
 ** Basic Configurations
 #+BEGIN_SRC emacs-lisp
 (setq +latex-viewers '(evince))
@@ -294,7 +335,7 @@ Helper function that can be used inside dir-locals.el to query master file autom
 #+RESULTS:
 | evince |
 
-** px - preview LaTeX in any mode
+** px-preview LaTeX in any mode
 #+BEGIN_SRC emacs-lisp
 (use-package px)
 #+END_SRC
@@ -317,6 +358,24 @@ TODO finish this sometime
 ;; TODO: append .cfg files to rainbow-latex-colors-major-mode-list somehow
 (use-package rainbow-mode)
 #+END_SRC
+
+* Zotero
+#+begin_src emacs-lisp
+(after! citar
+  (setq! citar-bibliography '("/home/pollakg/zotero/zotero_bibliography.bib"))
+  (setq! citar-notes-paths '("/home/romeo/Zotero/Notes"))
+  (setq! citar-at-point-function 'embark-act)
+  (defun citar-file-open (file)  ;; open pdf in external viewer
+    "Open FILE."
+    (if (member (file-name-extension file) '("html" "pdf"))
+        (citar-file-open-external (expand-file-name file))
+      (funcall citar-file-open-function (expand-file-name file))))
+  (citar-filenotify-setup '(LaTeX-mode-hook org-mode-hook)) ;; autosync .bib file
+
+)
+#+end_src
+
+#+RESULTS:
 
 * COMMENT Mail
 Each path is relative to `+mu4e-mu4e-mail-path',
@@ -366,6 +425,9 @@ Switched to lsp
 ;#+BEGIN_SRC emacs-lisp
 ;(use-package epc ;:defer t)
 ;(setq jedi:server-command '("/Users/pollakg/.emacs.d/elpa/jedi-core-20170121.610/jediepcserver.py"))
+(setq +python-ipython-repl-args '("-i" "--simple-prompt" "--no-color-info"))
+(setq +python-jupyter-repl-args '("--simple-prompt"))
+(setq python-shell-interpreter "ipython" python-shell-interpreter-args "-i --simple-prompt" python-shell-prompt-detect-failure-warning nil)
 #+END_SRC
 * ESS and R
 Auto scroll for ESS
@@ -412,7 +474,6 @@ Show diffs directly within the file
 
 #+RESULTS:
 
-
 * Tramp
 ** Git Integration
 #+begin_src emacs-lisp
@@ -441,26 +502,27 @@ Show diffs directly within the file
         '(require 'flycheck-matlab-mlint)))
   #+end_SRC
 
-
 * hl-todo
 Add Colored Keywords to your code.
 #+BEGIN_SRC emacs-lisp
-;; the default
 ;; (after! hl-todo
 ;;     (setq hl-todo-keyword-faces
-;;         '(("IMPORTANT"   . "#967E1E"))))
-;; (use-package hl-todo
-;; :hook (prog-mode . hl-todo-mode)
-;; :config
-;; (setq hl-todo-highlight-punctuation ":"
-;;         hl-todo-keyword-faces
-;;         `(("TODO"       warning bold)
-;;         ("FIXME"      error bold)
-;;         ("HACK"       font-lock-constant-face bold)
-;;         ("REVIEW"     font-lock-keyword-face bold)
-;;         ("IMPORTANT"  font-lock-keyword-face bold)
-;;         ("NOTE"       success bold)
-;;         ("DEPRECATED" font-lock-doc-face bold))))
+;;         '(("IMPORTANT" . "#967E1E")
+;;           ("DONE" . "#afd8af")
+;;           )))
+(use-package hl-todo
+:hook (prog-mode . hl-todo-mode)
+:config
+(setq hl-todo-highlight-punctuation ":"
+        hl-todo-keyword-faces
+        '(("TODO"       warning bold)
+        ("FIXME"      error bold)
+        ("HACK"       font-lock-constant-face bold)
+        ("REVIEW"     font-lock-keyword-face bold)
+        ("DONE"       font-lock-keyword-face bold)
+        ("IMPORTANT"  font-lock-keyword-face bold)
+        ("NOTE"       success bold)
+        ("DEPRECATED" font-lock-doc-face bold))))
 #+END_SRC
 
 
