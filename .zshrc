@@ -1,16 +1,19 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+
 # Lines configured by zsh-newuser-install
+xrdb -merge ~/.Xresources
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
-bindkey -v
+# bindkey -v
 PAPERSIZE=a4
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/pollakg/.zshrc'
-
 autoload -Uz compinit
 setopt COMPLETE_ALIASES # Autocompletion for aliases
-compinit
 kitty + complete setup zsh | source /dev/stdin
 # End of lines added by compinstall
 
@@ -22,84 +25,22 @@ kitty + complete setup zsh | source /dev/stdin
 ##############################################################
 ###################    Custome Functions     #################
 fpath+=~/.zfunc
+autoload -Uz compinit && compinit
 # Neofetch (Arch logo on startup of terminal)
 # neofetch
 pfetch
 export MOZ_ENABLE_WAYLAND=1
 ######################      OpenMP      ######################
-export OMP_NUM_THREADS=8
+export OMP_NUM_THREADS=4
+export MKL_NUM_THREADS=4
 ##### DEFAULT EDITOR
 export VISUAL="emacsclient -t -a ''"
 export EDITOR="emacsclient -t -a ''"
 export TERM="xterm-256color"
-# Powerline
-powerline-daemon -q
-POWERLINE_BASH_CONTINUATION=1
-POWERLINE_BASH_SELECT=1 
-. /usr/share/powerline/bindings/bash/powerline.sh
-###### Powerlevel9k powerline
-# font needs to be set before powerline is initalized
-#POWERLEVEL9K_MODE='nerd-fonts-complete'
-# POWERLEVEL9K_MODE='nerdfont-complete'
-# source /usr/share/zsh-theme-powerlevel9k/powerlevel9k.zsh-theme
-source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
-# Battery
-# POWERLEVEL9K_BATTERY_CHARGING='yellow'
-# POWERLEVEL9K_BATTERY_CHARGED='green'
-# POWERLEVEL9K_BATTERY_DISCONNECTED='echo $DEFAULT_COLOR'
-# POWERLEVEL9K_BATTERY_LOW_THRESHOLD='10'
-# POWERLEVEL9K_BATTERY_LOW_COLOR='red'
-# POWERLEVEL9K_BATTERY_ICON='\uf1e6 '
-# POWERLEVEL9K_BATTERY_CHARGED_BACKGROUND='253'
+######################      Powerline 10k ####################
 
-POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=''
-POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX='\uf0da'
-POWERLEVEL9K_CUSTOM_ARCH_ICON="\uf302'"
-POWERLEVEL9K_CUSTOM_ARCH_ICON_BACKGROUND=002
-# DIR
-POWERLEVEL9K_DIR_HOME_BACKGROUND='002'
-# POWERLEVEL9K_DIR_DEFAULT_BACKGROUND='003'
-POWERLEVEL9K_DIR_HOME_SUBFOLDER_BACKGROUND='011'
-# USER
-POWERLEVEL9K_USER_DEFAULT_BACKGROUND=241
-POWERLEVEL9K_USER_DEFAULT_FOREGROUND=255
-# VCS Git
-# GITSTATUS_LOG_LEVEL="DEBUG gitstatus_start -s 1 -u 1 -d 1 -c 1 -m -1 POWERLEVEL9K"
-POWERLEVEL9K_VCS_GIT_ICON=''
-POWERLEVEL9K_VCS_STAGED_ICON='\u00b1'
-POWERLEVEL9K_VCS_UNTRACKED_ICON='\u25CF'
-POWERLEVEL9K_VCS_UNSTAGED_ICON='\u00b1'
-POWERLEVEL9K_VCS_INCOMING_CHANGES_ICON='\u2193'
-POWERLEVEL9K_VCS_OUTGOING_CHANGES_ICON='\u2191'
-POWERLEVEL9K_VCS_MODIFIED_BACKGROUND='yellow'
-POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND='yellow'
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(custom_arch_icon user dir ssh vcs)
-# POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(custom_arch_icon ssh dir newline status)
-#POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(custom_arch_icon battery context status dir vcs)
-# POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir dir_writable user vi_mode vcs status)
-POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(background_jobs virtualenv rbenv rvm)
-POWERLEVEL9K_PROMPT_ADD_NEWLINE=false
-# Shorten strategy 
-# POWERLEVEL9K_PROMPT_ON_NEWLINE=true
-# POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
-# POWERLEVEL9K_RPROMPT_ON_NEWLINE=true
-# POWERLEVEL9K_SHORTEN_STRATEGY="truncate_beginning"
-# POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="%F{001}\u256D\u2500%f"
-# POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%F{001}\u2570\uf460%f "
-##### Powerline
-#powerline-daemon -q
-#. /usr/lib/python3.7/site-packages/powerline/bindings/zsh/powerline.zsh
 ###### Autoload prompt theme system
-# autoload -Uz promptinit
-# promptinit
-##### History search
-# autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
-# zle -N up-line-or-beginning-search
-# zle -N down-line-or-beginning-search
 
-# [[ -n "$key[Up]"   ]] && bindkey -- "$key[Up]"   up-line-or-beginning-search
-# [[ -n "$key[Down]" ]] && bindkey -- "$key[Down]" down-line-or-beginning-search
 ######################################################################################
 #                                             German/English
 ######################################################################################
@@ -122,7 +63,8 @@ function search_pdfs(){
     do
         if pdftotext -q -enc Latin1 "$filename" - | grep -q --color=always -i $1;
         then
-            echo "${GREEN}PDF Document:${YELLOW} $(basename $filename)${NC}"\
+            # echo "${GREEN}PDF Document:${YELLOW} $(basename $filename)${NC}"\
+            echo "${GREEN}PDF Document:${YELLOW} $filename${NC}"\
                 && pdftotext -q -enc Latin1 "$filename" - | grep --color=always -i $1\
                 && echo "\n"
         fi
@@ -135,14 +77,51 @@ function search_pdfs(){
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias config-list='config ls-tree --full-tree -r HEAD'
 ######################################################################################
+#                              Browser
+######################################################################################
+BROWSER=google-chrome:firefox:$BROWSER
+######################################################################################
 #                              Emacs
 ######################################################################################
 alias killemacs="echo emacsclient -e '(kill-emacs)';"
+#####  vTerm
+vterm_printf() {
+    if [ -n "$TMUX" ] && ([ "${TERM%%-*}" = "tmux" ] || [ "${TERM%%-*}" = "screen" ]); then
+        # Tell tmux to pass the escape sequences through
+        printf "\ePtmux;\e\e]%s\007\e\\" "$1"
+    elif [ "${TERM%%-*}" = "screen" ]; then
+        # GNU screen (screen, screen-256color, screen-256color-bce)
+        printf "\eP\e]%s\007\e\\" "$1"
+    else
+        printf "\e]%s\e\\" "$1"
+    fi
+}
+# Clear the shell
+if [[ "$INSIDE_EMACS" = 'vterm' ]]; then
+    alias clear='vterm_printf "51;Evterm-clear-scrollback";tput clear'
+fi
+# Set Title to "HOSTNAME:PWD"
+autoload -U add-zsh-hook
+add-zsh-hook -Uz chpwd (){ print -Pn "\e]2;%m:%2~\a" }
+# Prompt Tracking
+vterm_prompt_end() {
+    vterm_printf "51;A$(whoami)@$(hostname):$(pwd)"
+}
+setopt PROMPT_SUBST
+PROMPT=$PROMPT'%{$(vterm_prompt_end)%}'
+######################################################################################
+#                              Local Libraries
+######################################################################################
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/.local/lib
 ######################################################################################
 #                              DOOM
 ######################################################################################
 export PATH=~/.emacs.d/bin:$PATH
 export PATH=~/.local/bin:$PATH
+######################################################################################
+#                              Conda
+######################################################################################
+export PATH="$HOME/.conda/bin:$PATH"
 ######################################################################################
 #                              MATLAB
 ######################################################################################
@@ -164,9 +143,57 @@ export PETSC_ARCH=arch-linux-c-debug
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
 ################
-# Alias
+# Alias i.e. for lsd and or bat
 ################
-alias ls="ls --color"
-alias ll="ls -l"
+alias ls='lsd'
+alias tf="terraform"
+alias ll='ls -l'
+# alias ll="ls -l --color"
+alias la='ls -a'
+alias lla='ls -la'
+alias lt='ls --tree'
 
 export PATH="$HOME/.poetry/bin:$PATH"
+######################################################################################
+#                             SSH AGENT
+######################################################################################
+export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/ssh-agent.socket
+######################################################################################
+#                             Korali
+######################################################################################
+export KORALI_PREFIX="$HOME/polybox/CSE/master/6th_term/master_thesis/korali"
+export EXAMPLES="${HOME}/polybox/CSE/master/6th_term/master_thesis/korali/examples/learning/supervised/"
+######################################################################################
+#                             AZURE
+######################################################################################
+# Store API_TOKENS in .bash_profile or .env or some other file not version controlled.
+######################################################################################
+#                            Powerlevel 10k
+######################################################################################
+source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+# GITSTATUS_LOG_LEVEL=DEBUG
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+#                             MODULAR
+######################################################################################
+export MODULAR_HOME="/home/pollakg/.modular"
+export PATH="/home/pollakg/.modular/pkg/packages.modular.com_mojo/bin:$PATH"
+######################################################################################
+#                            conda init
+######################################################################################
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/pollakg/miniforge3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/pollakg/miniforge3/etc/profile.d/conda.sh" ]; then
+        . "/home/pollakg/miniforge3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/pollakg/miniforge3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/.local/lib/mojo
+export PATH=$PATH:~/.modular/pkg/packages.modular.com_mojo/bin/

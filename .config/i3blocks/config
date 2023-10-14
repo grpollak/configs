@@ -30,9 +30,9 @@ separator_block_width=20
 markup=none
 
 
-[user]
-label=
-interval=once
+# [user]
+# label=
+# interval=once
 # Part 1
 
 [audio]
@@ -89,9 +89,9 @@ interval=2
 # label=
 # interval=10
 
-[ip-address]
-label=IP: 
-interval=once
+# [ip-address]
+# label=IP:
+# interval=once
 
 # [ip]
 # command=hostname -i | awk '{ print "IP:" $1 }'

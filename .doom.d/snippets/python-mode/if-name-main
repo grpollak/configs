@@ -1,8 +1,10 @@
 # -*- mode: snippet -*-
 # name: if name main
-# key: ifmain
+# key: ifname
 # group: magic
 # author: Georg R. Pollak <pollakgeorg@gmail.com>
 # --
+
+
 if __name__ == "__main__":
    $0

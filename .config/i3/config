@@ -63,8 +63,8 @@ set $right l
 #
 # You can get the names of your outputs by running: xrandr
 # xrandr --output eDP-1-1 --mode 1920x1080 --pos 0x0 --rotate normal
-exec xrandr  --output eDP1 --auto --left-of HDMI1 --rotate normal --output DP2 --auto --right-of HDMI1 --rotate normal
-# exec xrandr --output DP2 --auto --right-of HDMI1 --rotate normal --output eDP1 --auto --left-of HDMI1 --rotate normal
+# exec xrandr --output eDP1 --auto --left-of HDMI1 --rotate normal --output DP2 --auto --right-of HDMI1 --rotate inverted
+# exec xrandr --output DP2 --auto --left-of HDMI1 --rotate normal --output eDP1 --auto --right-of HDMI1 --rotate normal
 # --dpi 220
 # --output HDMI-1-2 --primary --mode 1920x1080 --pos 1920x0 --rotate normal
 #============================================================================================
@@ -316,7 +316,7 @@ bar {
 
   # Press $mod+o followed by either f, t, Escape or Return to launch firefox,
   # thunderbird or return to the default mode, respectively.
-  set $mode_launcher Launch: [a]genda [b]lueman [c]hrome [e]macs [>+x].tex f]irefox [h]top [i]ncsacpe [m]ail [r]anger [s]potify [S]way config [t]hunderbird
+  set $mode_launcher Launch: [a]genda [b]lueman [c]hrome [e]macs [>+x].tex [f]irefox [h]top [i]ncsacpe [m]ail [r]anger [s]potify [S]way config [t]hunderbird
   set $pdf_launcher Open pdf: [a]rch linux [c]pp [h]pc [g]it [m]ath [l]inux [p]ython
 
   bindsym $mod+o mode "$mode_launcher"

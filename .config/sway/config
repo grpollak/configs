@@ -30,12 +30,29 @@ set $right l
 #============================================================================================
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
+# For the position use pos x,y
+# No spaces between commas and when scaling you need to scale the position as well
+#transform 90 transform 180
+# transform 270
+# big Screen Vienna
+# output HDMI-A-1 res 1920x1080 scale 1 pos 0,0
+# big Screen Dell
+output HDMI-A-1 res 2560x1080 scale 1
+# NEXIGO Screen
+# output DP-2 res 1920x1080 scale 1.1 pos 0,0
+# pos 0,0
+# big Screen Vienna
+output DP-2 res 1920x1080 scale 1 pos 0,0
+# pos 1476,0
+# big TV Rosa
+# output HDMI-A-1 res 1680x1050 scale 1.3 pos 0,0
 # output eDP-1 Lenovo Screen 2560x1440
 #  transform 270
-output DP-2 res 1920x1080 pos 0 0 scale 1.3
-output HDMI-A-1 res 2560x1080 scale 1
-output eDP-1 res 2560x1440 scale 2
-#output eDP-1  pos 0 0 res 2560x1440 scale 2
+output eDP-1 res 2560x1440 scale 1.3
+# pos 4036,0
+bindswitch lid:on output eDP-1 disable
+bindswitch lid:off output eDP-1 enabled
+# output eDP-1 res 2560x1440 scale 2
 #resolution Dell Screen 2560x1080
 #transform 270
 #                               Brightness
@@ -50,23 +67,28 @@ mode "$Brightness" {
     bindsym Escape mode "default"
 }
 bindsym $mod+Shift+b mode "$Brightness"
+# ddcutil detect
 mode "Screen Left" {
-    bindsym k exec ddcutil --bus 6 setvcp 10 + 10
-    bindsym j exec ddcutil --bus 6 setvcp 10 - 10    # return to default mode
-    bindsym Escape mode "$Brightness"
+    bindsym k exec brightnessctl set 5%-
+    bindsym j exec brightnessctl set +5%
+    bindsym Escape mode "default"
     bindsym Return mode "default"
 }
 mode "Screen Center" {
     bindsym k exec ddcutil --bus 2 setvcp 10 + 10
     bindsym j exec ddcutil --bus 2 setvcp 10 - 10    # return to default mode
+    bindsym Shift+k exec ddcutil --bus 2 setvcp 10 + 50
+    bindsym Shift+j exec ddcutil --bus 2 setvcp 10 - 50    # return to default mode
     bindsym Escape mode "default"
     bindsym Return mode "default"
 }
 # XF86MonBrightnessDown
 mode "Screen Right" {
-    bindsym k exec brightnessctl set 5%-
-    bindsym j exec brightnessctl set +5%
-    bindsym Escape mode "default"
+    bindsym k exec ddcutil --bus 7 setvcp 10 + 10
+    bindsym j exec ddcutil --bus 7 setvcp 10 - 10    # return to default mode
+    bindsym Shift+k exec ddcutil --bus 7 setvcp 10 + 50
+    bindsym Shift+j exec ddcutil --bus 7 setvcp 10 - 50    # return to default mode
+    bindsym Escape mode "$Brightness"
     bindsym Return mode "default"
 }
 #                               Locking the screen with waylock
@@ -78,6 +100,7 @@ bindsym $mod+ctrl+l exec $lockman
 workspace 1 output HDMI-A-1
 workspace 8 output eDP-1
 
+
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 
@@ -85,7 +108,13 @@ output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 #                                     Termianl
 #============================================================================================
 # set $term env KITTY_ENABLE_WAYLAND=0 kitty
-set $term uxterm
+# set $term kitty
+# set $term foot
+set $vterm 'emacsclient -e "(multi-vterm)"'
+# set $vterm 'emacsclient -c -e "(vterm) (switch-to-buffer \'vterm\')"'
+# set $vterm 'emacsclient -c -e "(+vterm/toogle) (switch-to-buffer \'vterm\')"'
+set $term foot
+set $term2 $vterm
 #                                      Screenshots with Slurp
 #============================================================================================
 bindsym --release Print exec grim -g "$(slurp)" - | wl-copy
@@ -170,6 +199,8 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 #                                  Startup
 #============================================================================================
 workspace $ws1; exec $term -e "ranger"; exec $term; exec 'emacsclient -a "" -c'
+exec dbus-update-activation-environment DISPLAY XAUTHORITY WAYLAND_DISPLAY
+
 # workspace 8; exec owncloud
 #workspace 3:Mail; exec thunderbird
 #exec termite; move container to workspace 1:Work
@@ -196,7 +227,8 @@ workspace $ws1; exec $term -e "ranger"; exec $term; exec 'emacsclient -a "" -c'
 #============================================================================================
     # start a terminal
     bindsym $mod+Return exec $term
-    bindsym $mod+Shift+Return exec $term -e "ranger"
+    # bindsym $mod+Return exec emacsclient -c -e '(vterm) (switch-to-buffer "vterm")'
+    bindsym $mod+Shift+Return exec $term2
 
     # kill focused window
     bindsym $mod+Shift+q kill
@@ -353,7 +385,7 @@ bar {
   
   mode "$mode_launcher" {
 
-      bindsym h exec $term -e "htop"; mode "default"
+      bindsym h exec $term -e htop -d 100; mode "default"
       bindsym $mod+s exec 'emacsclient -a "" -c "/home/pollakg/.config/sway/config"'; mode "default";
       bindsym s exec spotify; mode "default";
 
