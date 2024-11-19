@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: NuxtLink
+# key: nlink
+# contributor: Georg R. Pollak
+# group: nuxt
+# --
+<NuxtLink to="/$1">${2:Title}</NuxtLink>
+$0

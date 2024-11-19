@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# name: implementation
+# key: implementation
+# contributor: Georg R. Pollak
+# group: theorem
+# --
+\begin{implementationbox}\nospacing
+    \begin{implementation}${1:[${2:title}]}${3:\label{implementation:${2:$(create-label-for-theorem yas-text)}}}
+        $0
+    \end{implementation}
+\end{implementationbox}

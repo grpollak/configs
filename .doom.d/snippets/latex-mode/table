@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: table
+# key: table
+# contributor: Georg R. Pollak
+# group: tables
+# --
+\begin{table}[${1:ht}]
+    $0
+\end{table}

@@ -167,7 +167,8 @@
        ;; (python +lsp +tree-sitter)            ; beautiful is better than ugly
        ;; (python +lsp +mspyls)            ; beautiful is better than ugly
        ;; (python +lsp +poetry +pyls +tree-sitter)            ; beautiful is better than ugly
-       (python +lsp +pyright +tree-sitter +conda +poetry)            ; beautiful is better than ugly
+       ;; (python +lsp +pyright +tree-sitter +conda +poetry)            ; beautiful is better than ugly
+       (python +lsp +poetry  +pyright +pyls +tree-sitter +pyen +conda)            ; beautiful is better than ugly
        ;;qt                ; the 'cutest' gui framework ever
        ;;racket            ; a DSL for DSLs
        ;;raku              ; the artist formerly known as perl6

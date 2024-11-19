@@ -104,6 +104,10 @@
 (setq org-hide-emphasis-markers t)
 (setq org-directory "~/org/")
 (setq org-agenda-files (list "~/org" "~/.doom.d/"))
+(after! org
+  (add-to-list 'org-todo-keywords '(sequence "TODAY(f)" "INPROGRESS(P)" "|"))
+  (add-to-list 'org-todo-keyword-faces '("TODAY" . "green"))
+  (add-to-list 'org-todo-keyword-faces '("INPROGRESS" . "orange")))
 
 (use-package projectile
   :config
@@ -350,27 +354,4 @@
         ("NOTE"       success bold)
         ("DEPRECATED" font-lock-doc-face bold))))
 
-;; (load! "lisp/label_images_by_score")
-(use-package! label-images-by-score-mode
-  :load-path "lisp/label-images-by-score-mode"
-  ;; :bind
-  ;; (("k" . label-images-by-score-next)
-  ;;  ("j" . label-images-by-score-prev)
-  ;;  ("1" . label-images-by-score-score1)
-  ;;  ("2" . label-images-by-score-score2)
-  ;;  ("3" . label-images-by-score-score3)
-  ;;  ("4" . label-images-by-score-score4)
-  ;;  ("5" . label-images-by-score-score5)
-  ;;  ("q" . label-images-by-score-quit))
-  )
-;; (map! :after label-images-by-score-mode
-;;       :map label-images-by-score-mode-map
-;;       "k" #'label-images-by-score-next
-;;       "j" #'label-images-by-score-prev
-;;       "1" #'label-images-by-score-score1
-;;       "2" #'label-images-by-score-score2
-;;       "3" #'label-images-by-score-score3
-;;       "4" #'label-images-by-score-score4
-;;       "5" #'label-images-by-score-score5
-;;       "q" #'label-images-by-score-quit
-;; )
+

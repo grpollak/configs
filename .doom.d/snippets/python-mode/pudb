@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: pudb
+# key: pudb
+# author: Georg R. Pollak
+# --
+import pudb; pudb.set_trace()

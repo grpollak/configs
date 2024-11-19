@@ -1,0 +1,17 @@
+# -*- mode: snippet -*-
+# name: class
+# key: class
+# group: class
+# author: Georg R. Pollak <pollakgeorg@gmail.com>
+# --
+
+class ${1:ClassName}${2:{(${3:BaseClass1, BaseClass2})}:
+    ${4:{${5:class_variable = value}}
+        ${6:def __init__(self, ${7:${8:arg1, arg2}}):
+            ${9:super().init(${10:arg1, arg2})}
+                pass}
+        ${11:self.${12:instance_variable = value}}
+        ${12:$1.${14:class_variable = value}}
+    ${13:def memberFunction(self, ${14:${15:arg1, arg2}}):
+        pass}
+    $0

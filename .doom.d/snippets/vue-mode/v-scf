@@ -1,0 +1,17 @@
+# -*- mode: snippet -*-
+# name: vue scf
+# key: vscf
+# contributor: Georg R. Pollak
+# group: vue
+# --
+<template>
+
+</template>
+
+<script setup>
+
+</script>
+
+<style scoped>
+
+</style>
